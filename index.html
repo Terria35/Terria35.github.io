@@ -26,6 +26,29 @@ var colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink"];
     <body id='body'>
     <button onclick="changeColor();">Change color</button>
     </body>
+<script>
+    var colors2 = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+    var rainbowIndex = 0
+    var on = 0;
+    var col = document.getElementById("body");
+    function rainbow() {
+        if (on >= 2) {
+            on = 0;
+        }
+    }
+    function rainbowMode() {
+        while(on = 1) {
+             col.style.backgroundColor = colors2[rainbowIndex];
+            rainbowIndex++;
+        }
+        if(rainbowIndex >= colors2.length) {
+            rainbowIndex = 0;
+        }
+    }
+    </script>
+    <body id='body'>
+        <button onclick=["rainbow()","rainbowMode()"];>Rainbow Mode</button>
+    </body>
 <p>
 <img src="Terria34.github.io/The Man.jpg" alt="Rick Himself" width="1000" height="600">
 </p>

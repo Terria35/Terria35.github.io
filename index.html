@@ -37,9 +37,17 @@ var colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink"];
         }
     }
     function rainbowMode() {
-        while(on = 1) {
+        if (i > 10) {
+            while(on = 1) {
              col.style.backgroundColor = colors2[rainbowIndex];
             rainbowIndex++;
+            i = 0;
+            }
+       }
+        else {
+                i++
+        }
+            
         }
         if(rainbowIndex >= colors2.length) {
             rainbowIndex = 0;

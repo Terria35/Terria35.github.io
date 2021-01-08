@@ -37,19 +37,19 @@ var colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink"];
         }
     }
     function rainbowMode() {
-           let i = 0; 
-           while (i < 10) { 
-           task(i); 
-           i++; 
-         } 
-      function task(i) { 
-    setTimeout(function() { 
-	 while(on = 1) {
-             col.style.backgroundColor = colors2[rainbowIndex];
+	    var i = 0
+	    while(on = 1) {
+		    while (i < 10) { 
+  task(i); 
+   i++; 
+} 
+function task(i) { 
+  setTimeout(function() { 
+      col.style.backgroundColor = colors2[rainbowIndex];
             rainbowIndex++;
-            }
-        }
-}, 2000 * i); 
+  }, 2000 * i); 
+} 
+    }
         if(rainbowIndex >= colors2.length) {
             rainbowIndex = 0;
         }

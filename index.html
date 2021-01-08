@@ -34,7 +34,7 @@ var colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink"];
     var col = document.getElementById("body");
     function rainbow() {
         if (on >= 2) {
-            on = 0;
+            on = 1;
         }
     }
     function rainbowMode() {
@@ -52,7 +52,7 @@ var colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink"];
     }
     </script>
     <body>
-        <button onclick="setInterval(rainbow,1000); addRainbow(); setInterval(rainbowMode, 2000);">Rainbow Mode</button>
+        <button onclick="setInterval(rainbow,500); addRainbow(); setInterval(rainbowMode, 1000);">Rainbow Mode</button>
     </body>
 <p>
 <img src="Terria34.github.io/The Man.jpg" alt="Rick Himself" width="1000" height="600">

@@ -7,11 +7,19 @@
       var clicks = 1
       var b = 100
       function clicked() {
-        document.getElementById("clicks").innerHTML = clicks;
+        if (doubleClick = 1) {
+            document.getElementById("clicks").innerHTML = clicks;
+          clicks++;
+          clicks++;
+        } else {
+          document.getElementById("clicks").innerHTML = clicks;
       clicks++;
         }
+        }
       function click2() {
-          doubleClick = 1;
+          if (clicks >= 100) {
+            doubleClick = 1;
+          }
       }
     </script>
     <p>

@@ -5,6 +5,7 @@
   <body style="background-color:yellow">
     <script>
       var clicks = 1
+      var b = 100
       function clicked() {
         document.getElementById("clicks").innerHTML = clicks;
       clicks++;
@@ -12,7 +13,7 @@
       function Click2() {
         if (clicks >= 100) {
           doubleClick = 1;
-          clicks - 100;
+          clicks - b;
         }
       }
     </script>

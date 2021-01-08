@@ -7,12 +7,25 @@
       var click = 1
       function clicked() {
         document.getElementById("clicks").innerHTML = click;
-        click++;
+        if (doubleClick = 1) {
+          click + 2;
+        }
+        else {
+          click++;
+        }
+      }
+      function Click2() {
+        if (clicks >= 100) {
+          doubleClick = 1;
+          clicks - 100;
+        }
       }
     </script>
     <p>
   <button onclick="clicked();" style="width:1000px;height:500px;">Press For Good Luck</button>
     </p>
     <p>Clicks: <span id="clicks"></span></p>
+    <h1 style="color:blue">Clicks Shop<h1>
+      <button onclick="Click2()">Double Luck - 100 Clicks<button>
   </body>
   </html>

@@ -34,19 +34,18 @@ var colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink"];
     var col = document.getElementById("body");
     function rainbow() {
         if (on >= 2) {
-            on = 1;
+            on = 0;
         }
     }
     function rainbowMode() {
 	    if(on = 1) {
              col.style.backgroundColor = colors2[rainbowIndex];
             rainbowIndex++;
-		    
+	if(rainbowIndex >= colors2.length) {
+            rainbowIndex = 0;
+	}
             }
     }
-        if(rainbowIndex >= colors2.length) {
-            rainbowIndex = 0;
-        }
     function addRainbow() {
         on++;
     }

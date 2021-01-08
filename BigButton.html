@@ -3,8 +3,14 @@
 <html lang="en">
   <head>Press The Button</head>
   <body style="background-color:yellow">
+    <script>
+      var click = 0
+      function clicked() {
+        document.getElementById("clicks").innerHTML = click;
+      }
     <p>
-  <button style="width:1000px;height:500px;">Press For Good Luck</button>
+  <button onclick="clicked();" style="width:1000px;height:500px;">Press For Good Luck</button>
     </p>
+    <p>Clicks: <span id="clicks"></span></p>
   </body>
   </html>

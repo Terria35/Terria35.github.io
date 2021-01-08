@@ -4,17 +4,12 @@
   <head>Press The Button</head>
   <body style="background-color:yellow">
     <script>
+      var doubleClick = 1
       var clicks = 1
       var b = 100
       function clicked() {
-        if (doubleClick = 1) {
             document.getElementById("clicks").innerHTML = clicks;
-          clicks++;
-        } else {
-          document.getElementById("clicks").innerHTML = clicks;
-      clicks++;
-          clicks++;
-        }
+          clicks = clicks*doubleClick
         }
       function click2() {
          doubleClick++;

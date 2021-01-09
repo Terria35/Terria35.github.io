@@ -26,7 +26,7 @@
         }
         function autoClick() {
           if (clicks >= 300*luck3) {
-              clicks = clicks - 300;
+              clicks = clicks - 300*luck3;
               document.getElementById("clicks").innerHTML = clicks;
               setInterval(clicked,3000);
               luck3++;

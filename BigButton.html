@@ -4,7 +4,8 @@
   <head>Press The Button</head>
   <body style="background-color:yellow">
     <script>
-      var luck3 = 0
+      var autoClickValue = 300
+      var luck3 = 1
       var luck2 = 0
       var doubleClick = 0
       var clicks = 1
@@ -24,11 +25,12 @@
           luck2 = 1;
         }
         function autoClick() {
-          if (clicks >= 300; luck3 < 1) {
+          if (clicks >= 300*luck3) {
               clicks = clicks - 300;
               document.getElementById("clicks").innerHTML = clicks;
               setInterval(clicked,3000);
-              luck3 = 1
+              luck3++;
+              autoClickValue = 300*luck3
           }
         }
       }
@@ -39,6 +41,6 @@
     <p>Clicks: <span id="clicks"></span></p>
     <h1 style="color:blue">Clicks Shop<h1>
       <button onclick="click2();">Double Luck - 100 Clicks</button>
-      <button onclick="autoClick();">Auto Click 1 - 300 Clicks</button>
+      <button onclick="autoClick();">Auto Click - <span id="autoClickValue"></span>Clicks</button>
   </body>
   </html>

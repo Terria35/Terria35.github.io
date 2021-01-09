@@ -9,11 +9,14 @@
       var b = 100
       function clicked() {
             document.getElementById("clicks").innerHTML = clicks;
-        clicks = clicks*doubleClick
+        clicks = clicks + doubleClick
           clicks++;
         }
       function click2() {
+        if (clicks >= 100) {
          doubleClick++;
+          clicks - 100
+        }
       }
     </script>
     <p>

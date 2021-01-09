@@ -20,11 +20,19 @@
         }
       }
     </script>
+    <script>
+      var button = document.getElementById('show_button')
+    button.addEventListener('click',hideshow,false);
+
+    function hideshow() {
+        document.getElementById('hidden-div').style.display = 'block'; 
+        this.style.display = 'none'
+    </script>
     <p>
   <button onclick="clicked();" style="width:1000px;height:500px;">Press For Good Luck</button>
     </p>
     <p>Clicks: <span id="clicks"></span></p>
     <h1 style="color:blue">Clicks Shop<h1>
-      <button onclick="click2(); "getElementById('hidden-div').style.display = 'block'; this.style.display = 'none;'">Double Luck - 100 Clicks</button>
+      <button id="doubleClick"; onclick="click2();">Double Luck - 100 Clicks</button>
   </body>
   </html>

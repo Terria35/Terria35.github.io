@@ -14,10 +14,12 @@
         }
       function click2() {
         if (clicks >= 100) {
-         doubleClick++;
+         doubleClick = 1;
+        }
+        if (doubleClick < 1) {
           clicks = clicks - 100
           document.getElementById("clicks").innerHTML = clicks;
-        }
+        }0
       }
     </script>
     <p>

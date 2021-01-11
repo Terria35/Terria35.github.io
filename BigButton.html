@@ -14,6 +14,7 @@
       var doubleClick = 0
       var clicks = 1
       var b = 100
+      var luck4 = 1
       function clicked() {
             document.getElementById("clicks").innerHTML = clicks;
         clicks = clicks + doubleClick
@@ -44,6 +45,16 @@
           unhide()
         }
       }
+      function autoClick2() {
+          if (clicks >= 600) {
+            if (luck4 < 2) {
+              clicks = clicks - 600;
+              document.getElementById("clicks").innerHTML = clicks;
+              setInterval(clicked,2000);
+              luck4++;
+            }
+          }
+        }
       function unhide() {
     var hid = document.getElementsByClassName("winText");
     // Emulates jQuery $(element).is(':hidden');
@@ -61,6 +72,7 @@
     <h1 style="color:blue">Clicks Shop</h1>
       <button onclick="click2();">Double Click - 100 Clicks</button>
       <button onclick="autoClick();">Auto Clicker 1 - 300 Clicks</button>
+    <button onclick="autoClick2();">Auto Clicker 2 - 600 Clicks</button>
     <button onclick="win();">Win - 100,000 Clicks</button>
     <div class="winText">
     <p>Why did you click the button so much</p>

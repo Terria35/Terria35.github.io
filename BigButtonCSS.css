@@ -2,5 +2,6 @@ body {
   text-align: center;
 }
 .clickNumber {
+  display: block;
   border: 5px black;
 }

@@ -10,7 +10,6 @@
       var doubleClick = 0
       var clicks = 1
       var b = 100
-      document.getElementById("autoClickValue").innerHTML = 300*luck3;
       function clicked() {
             document.getElementById("clicks").innerHTML = clicks;
         clicks = clicks + doubleClick
@@ -27,16 +26,13 @@
         }
         function autoClick() {
           if (clicks >= 300*luck3) {
-              clicks = clicks - 300*luck3;
+            if (luck3 < 2) {
+              clicks = clicks - 300;
               document.getElementById("clicks").innerHTML = clicks;
-              setInterval(clicked,8000/luck3);
+              setInterval(clicked,3000);
               luck3++;
-              autoClickValue = 300*luck3
-              document.getElementById("autoClickValue").innerHTML = autoClickValue;
+            }
           }
-        }
-        function autoClick() {
-             document.getElementById("autoClickValue").innerHTML = autoClickValue2;
         }
       }
     </script>
@@ -46,6 +42,6 @@
     <p>Clicks: <span id="clicks"></span></p>
     <h1 style="color:blue">Clicks Shop<h1>
       <button onclick="click2();">Double Luck - 100 Clicks</button>
-      <button onclick="autoClick();">Auto Click - <span id="autoClickValue2"></span>Clicks</button>
+      <button onclick="autoClick();">Auto Click - 300 Clicks</button>
   </body>
   </html>

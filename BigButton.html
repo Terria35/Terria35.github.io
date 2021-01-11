@@ -10,6 +10,7 @@
       var doubleClick = 0
       var clicks = 1
       var b = 100
+      document.getElementById("autoClickValue").innerHTML = autoClickValue;
       function clicked() {
             document.getElementById("clicks").innerHTML = clicks;
         clicks = clicks + doubleClick
@@ -31,7 +32,6 @@
               setInterval(clicked,8000/luck3);
               luck3++;
               autoClickValue = 300*luck3
-            document.getElementById("autoClickValue").innerHTML = autoClickValue;
           }
         }
       }

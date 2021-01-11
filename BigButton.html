@@ -2,7 +2,7 @@
 <title>Button Time</title>
 <html lang="en">
   <head>Press The Button (In Progress)</head>
-  <body style="background-color:yellow">
+  <body style="background-color:yellow;" onload=autoCLick;>
     <script>
       var autoClickValue = 300
       var luck3 = 1
@@ -32,7 +32,11 @@
               setInterval(clicked,8000/luck3);
               luck3++;
               autoClickValue = 300*luck3
+              document.getElementById("autoClickValue").innerHTML = autoClickValue;
           }
+        }
+        function autoClick() {
+             document.getElementById("autoClickValue").innerHTML = autoClickValue2;
         }
       }
     </script>
@@ -42,6 +46,6 @@
     <p>Clicks: <span id="clicks"></span></p>
     <h1 style="color:blue">Clicks Shop<h1>
       <button onclick="click2();">Double Luck - 100 Clicks</button>
-      <button onclick="autoClick();">Auto Click - <span id="autoClickValue"></span>Clicks</button>
+      <button onclick="autoClick();">Auto Click - <span id="autoClickValue2"></span>Clicks</button>
   </body>
   </html>

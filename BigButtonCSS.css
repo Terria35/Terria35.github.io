@@ -1,7 +1,6 @@
 body {
   text-align: center;
 }
-.clickNumber {
-  display: block;
+div.clickNumber {
   border: 5px black;
 }

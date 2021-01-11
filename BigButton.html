@@ -6,7 +6,7 @@
     <script>
       var autoClickValue = 300
       var luck3 = 1
-      var luck2 = 0
+      var luck2 = 1
       var doubleClick = 0
       var clicks = 1
       var b = 100
@@ -19,11 +19,12 @@
             if (clicks >= 100) {
          doubleClick = 1;
         }
-        if (luck2 < 1) {
+        if (luck2 < 2) {
           clicks = clicks - 100
           document.getElementById("clicks").innerHTML = clicks;
           luck2 = 1;
         }
+      }
         function autoClick() {
           if (clicks >= 300*luck3) {
             if (luck3 < 2) {

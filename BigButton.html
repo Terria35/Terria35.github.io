@@ -17,14 +17,14 @@
         }
       function click2() {
             if (clicks >= 100) {
-         doubleClick = 1;
+              if (luck2 < 2) {
+              clicks = clicks - 100
+              document.getElementById("clicks").innerHTML = clicks;
+              luck2 = 1;
+                doubleClick = 1;
+              }
+            }
         }
-        if (luck2 < 2) {
-          clicks = clicks - 100
-          document.getElementById("clicks").innerHTML = clicks;
-          luck2 = 1;
-        }
-      }
         function autoClick() {
           if (clicks >= 300) {
             if (luck3 < 2) {

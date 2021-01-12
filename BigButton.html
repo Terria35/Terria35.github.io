@@ -8,7 +8,8 @@
   <body style="background-color:yellow">
     <style>.winText{visibility:hidden;}</style>
     <script>
-      var autoClickValue = 300
+      var autoClickValue = 1
+      var quad = 1
       var triple = 1
       var luck3 = 1
       var luck2 = 1
@@ -21,6 +22,42 @@
         clicks = clicks + doubleClick
           clicks++;
         }
+      function clickBoost2() {
+        if (clicks >= 1300) {
+          clicks = clicks - 1300
+          document.getElementById("clicks").innerHTML = clicks;
+          doubleclick = doubleclick + 10
+          setTimeout(() => { doubleclick = doubleclick - 10; }, 15000);
+        }
+      }
+      function clickBoost1() {
+        if (clicks >= 900) {
+          clicks = clicks - 900
+          document.getElementById("clicks").innerHTML = clicks;
+          doubleclick = doubleclick + 5
+          setTimeout(() => { doubleclick = doubleclick - 5; }, 15000);
+        }
+      }
+      function autoClick3() {
+        if (clicks >= 800) {
+          if (autoCLickValue < 2) {
+            clicks = clicks - 800
+            document.getElementById("clicks").innerHTML = clicks;
+            setInterval(clicked,1000);
+            autoClickValue = 2;
+          }
+        }
+      }
+      function click4() {
+        if (clicks >= 700) {
+          if (quad < 2) {
+            clicks = clicks - 700
+            document.getElementById("clicks").innerHTML = clicks;
+            doubleClick = 3;
+            quad = 2;
+          }
+        }
+      }
      function click3() {
        if (clicks >= 400) {
          if (triple < 2) {
@@ -82,14 +119,20 @@
     <p>Clicks: <span id="clicks"></span></p>
     </div>
     <h1 style="color:blue">Clicks Shop</h1>
+    <div class="buttons">
       <button id="doubleCLickButton" onclick="click2();">Double Click - 100 Clicks</button>
     <button onclick="click3();">Triple Click - 400 Clicks</button>
+      <button onclick="click4();">Quad Click - 700 Clicks</button>
       <button onclick="autoClick();">Auto Clicker 1 - 300 Clicks</button>
     <button onclick="autoClick2();">Auto Clicker 2 - 600 Clicks</button>
+      <button onclick="autoClick3();">Auto Clicker 3 - 800 Clicks</button>
+      <button onclick"clickBoost1();">Click Boost 1 (15 Seconds, Reusable)- 900 Clicks</button>
+      <button onclick"clickBoost2();">Click Boost 2 (15 Seconds, Reusable) - 1300 Clicks</button>
     <button onclick="win();">Win - 100,000 Clicks</button>
+    </div>
     <div class="winText">
     <p>Why did you click the button so much</p>
     </div>
   </body>
-  <p>ver 0.1.4</p>
+  <p>ver 0.1.5</p>
   </html>

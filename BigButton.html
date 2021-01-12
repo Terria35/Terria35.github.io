@@ -29,7 +29,7 @@
           clicks = clicks - 1300
           document.getElementById("clicks").innerHTML = clicks;
           doubleclick = doubleClick + 10
-          setTimeout(() => { doubleClick = doubleClick - 10; }, 15000);
+          setTimeout(() => { doubleClick = doubleClick - 10; }, 45000);
         }
       }
       function clickBoost1() {
@@ -37,7 +37,7 @@
           clicks = clicks - 900
           document.getElementById("clicks").innerHTML = clicks;
           doubleClick = doubleClick + 5
-          setTimeout(() => { doubleClick = doubleClick - 5; }, 15000);
+          setTimeout(() => { doubleClick = doubleClick - 5; }, 20000);
         }
       }
       function autoClick3() {
@@ -129,8 +129,8 @@
     <button onclick="autoClick2();">Auto Clicker 2 - 600 Clicks</button>
       <button onclick="autoClick3();">Auto Clicker 3 - 800 Clicks</button>
       <p>
-      <button onclick="clickBoost1();">Click Boost 1 (15 Seconds, Reusable)- 900 Clicks</button>
-      <button onclick="clickBoost2();">Click Boost 2 (15 Seconds, Reusable) - 1300 Clicks</button>
+      <button onclick="clickBoost1();">Click Boost 1 (20 Seconds, Reusable)- 900 Clicks</button>
+      <button onclick="clickBoost2();">Click Boost 2 (45 Seconds, Reusable) - 1300 Clicks</button>
     <button onclick="win();">Win - 100,000 Clicks</button>
       </p>
     </div>
@@ -138,5 +138,5 @@
     <p>Why did you click the button so much</p>
     </div>
   </body>
-  <p>ver 0.1.7(testing: this in in development, please come back later)</p>
+  <p>ver 0.1.7</p>
   </html>

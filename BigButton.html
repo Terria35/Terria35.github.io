@@ -8,6 +8,7 @@
   <body style="background-color:yellow">
     <style>.winText{visibility:hidden;}</style>
     <script>
+      var aautoClick3 = 1
       var autoClickValue = 1
       var quad = 1
       var triple = 1
@@ -40,11 +41,11 @@
       }
       function autoClick3() {
         if (clicks >= 800) {
-          if (autoCLickValue < 2) {
+          if (aautoClick3 < 2) {
             clicks = clicks - 800
             document.getElementById("clicks").innerHTML = clicks;
             setInterval(clicked,1000);
-            autoClickValue = 2;
+            aautoClick3 = 2;
           }
         }
       }
@@ -127,8 +128,8 @@
     <button onclick="autoClick2();">Auto Clicker 2 - 600 Clicks</button>
       <button onclick="autoClick3();">Auto Clicker 3 - 800 Clicks</button>
       <p>
-      <button onclick"clickBoost1();">Click Boost 1 (15 Seconds, Reusable)- 900 Clicks</button>
-      <button onclick"clickBoost2();">Click Boost 2 (15 Seconds, Reusable) - 1300 Clicks</button>
+      <button onclick="clickBoost1();">Click Boost 1 (15 Seconds, Reusable)- 900 Clicks</button>
+      <button onclick="clickBoost2();">Click Boost 2 (15 Seconds, Reusable) - 1300 Clicks</button>
     <button onclick="win();">Win - 100,000 Clicks</button>
       </p>
     </div>
@@ -136,5 +137,5 @@
     <p>Why did you click the button so much</p>
     </div>
   </body>
-  <p>ver 0.1.5</p>
+  <p>ver 0.1.6</p>
   </html>

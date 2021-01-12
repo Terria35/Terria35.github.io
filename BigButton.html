@@ -27,6 +27,7 @@
               document.getElementById("clicks").innerHTML = clicks;
               luck2 = 2;
                 doubleClick = 1;
+                document.getElementById('doubleClickButton').style.visibility = 'hidden';
               }
             }
         }
@@ -64,13 +65,13 @@
 }
     </script>
     <p>
-  <button onclick="clicked();" style="width:1000px;height:500px;">Press For Good Luck</button>
+  <button id="autoClickButton" onclick="clicked();" style="width:1000px;height:500px;">Press For Good Luck</button>
     </p>
     <div class="clickNumber">
     <p>Clicks: <span id="clicks"></span></p>
     </div>
     <h1 style="color:blue">Clicks Shop</h1>
-      <button onclick="click2();" onclick="this.style.display='none'">Double Click - 100 Clicks</button>
+      <button onclick="click2();">Double Click - 100 Clicks</button>
       <button onclick="autoClick();">Auto Clicker 1 - 300 Clicks</button>
     <button onclick="autoClick2();">Auto Clicker 2 - 600 Clicks</button>
     <button onclick="win();">Win - 100,000 Clicks</button>

@@ -9,6 +9,7 @@
     <style>.winText{visibility:hidden;}</style>
     <script>
       var autoClickValue = 300
+      var triple = 1
       var luck3 = 1
       var luck2 = 1
       var doubleClick = 0
@@ -20,6 +21,16 @@
         clicks = clicks + doubleClick
           clicks++;
         }
+     function click3() {
+       if (clicks >= 400) {
+         if (triple < 2) {
+           clicks = clicks - 400
+           document.getElementById("clicks").innerHTML = clicks;
+           doubleClick = 2;
+           triple = 2;
+         }
+       }
+     }
       function click2() {
             if (clicks >= 100) {
               if (luck2 < 2) {
@@ -65,13 +76,14 @@
 }
     </script>
     <p>
-  <button onclick="clicked();" style="width:1000px;height:500px;">Press For Good Luck</button>
+  <button id="clickButton" onclick="clicked();" style="width:1000px;height:500px;">Press For Good Luck</button>
     </p>
     <div class="clickNumber">
     <p>Clicks: <span id="clicks"></span></p>
     </div>
     <h1 style="color:blue">Clicks Shop</h1>
       <button id="doubleCLickButton" onclick="click2();">Double Click - 100 Clicks</button>
+    <button onclick="click3();">Triple Click - 400 Clicks</button>
       <button onclick="autoClick();">Auto Clicker 1 - 300 Clicks</button>
     <button onclick="autoClick2();">Auto Clicker 2 - 600 Clicks</button>
     <button onclick="win();">Win - 100,000 Clicks</button>

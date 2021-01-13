@@ -8,7 +8,6 @@
   <body style="background-color:yellow">
     <style>.winText{visibility:hidden;}</style>
     <script>
-      var highscoreClicks = clicks
       var highscore = localStorage.getItem('highscore') || 0;
       var doubleClickButton = document.getElementById("doubleClickButton").id
       var aautoClick3 = 1
@@ -21,17 +20,11 @@
       var clicks = 1
       var b = 100
       var luck4 = 1
-      function highScore {
-      if (highscoreClicks > highscore) {
-        highScore = parseInt(highscoreClicks);
-        localStorage.setItem('highscore', highscore);
-        }
-      }
       function clicked() {
             document.getElementById("clicks").innerHTML = clicks;
         clicks = clicks + doubleClick
           clicks++;
-        highScore;
+        highscore++;
         }
       function clickBoost2() {
         if (clicks >= 1300) {

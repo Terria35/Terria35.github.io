@@ -20,14 +20,17 @@
       var clicks = 1
       var b = 100
       var luck4 = 1
+      function highScore {
       if (clicks > highscore) {
         highScore = parseInt(clicks);
         localStorage.setItem('highscore', highscore);
+        }
       }
       function clicked() {
             document.getElementById("clicks").innerHTML = clicks;
         clicks = clicks + doubleClick
           clicks++;
+        highScore;
         }
       function clickBoost2() {
         if (clicks >= 1300) {

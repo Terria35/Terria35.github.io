@@ -8,6 +8,7 @@
   <body style="background-color:yellow">
     <style>.winText{visibility:hidden;}</style>
     <script>
+      var highScore = localStorage.getItem('highScore') || 0;
       var doubleClickButton = document.getElementById("doubleClickButton").id
       var aautoClick3 = 1
       var autoClickValue = 1
@@ -19,6 +20,10 @@
       var clicks = 1
       var b = 100
       var luck4 = 1
+      if (clicks > highscore) {
+        highScore = parseInt(clicks);
+        localStorage.setItem('highscore', highscore);
+      }
       function clicked() {
             document.getElementById("clicks").innerHTML = clicks;
         clicks = clicks + doubleClick
@@ -118,6 +123,7 @@
     </p>
     <div class="clickNumber">
     <p>Clicks: <span id="clicks"></span></p>
+      <p>High Score: <span id="highscore"></span></p>
     </div>
     <h1 style="color:blue">Clicks Shop</h1>
     <div class="buttons">
@@ -137,5 +143,5 @@
     <p>Why did you click the button so much</p>
     </div>
   </body>
-  <p>ver 0.1.7</p>
+  <p>ver 0.1.8</p>
   </html>

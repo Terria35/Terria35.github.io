@@ -8,6 +8,7 @@
   <body style="background-color:yellow">
     <style>.winText{visibility:hidden;}</style>
     <script>
+      var clicks = 1
       var highscore = localStorage.getItem('highscore') || 0;
       var doubleClickButton = document.getElementById("doubleClickButton").id
       var aautoClick3 = 1
@@ -17,7 +18,6 @@
       var luck3 = 1
       var luck2 = 1
       var doubleClick = 0
-      var clicks = 1
       var b = 100
       var luck4 = 1
       function clicked() {

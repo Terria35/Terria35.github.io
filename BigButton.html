@@ -9,7 +9,6 @@
     <style>.winText{visibility:hidden;}</style>
     <script>
       var clicks = 1
-      var highscore = localStorage.getItem('highscore') || 0;
       var doubleClickButton = document.getElementById("doubleClickButton").id
       var aautoClick3 = 1
       var autoClickValue = 1
@@ -24,7 +23,6 @@
             document.getElementById("clicks").innerHTML = clicks;
         clicks = clicks + doubleClick
           clicks++
-        highscore++
         }
       function clickBoost2() {
         if (clicks >= 1300) {

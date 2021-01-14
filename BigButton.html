@@ -14,15 +14,10 @@
       var triple = 1
       var luck3 = 1
       var luck2 = 1
-      var clicks = 1
       var doubleClick = 0
       var b = 100
       var luck4 = 1
       
-      function buttonClicked() {
-        document.getElementById("clicks").innerHTML = clicks;
-        clicks = clicks + doubleClick + 1
-        }
       function clickBoost2() {
         if (clicks >= 1300) {
           clicks = clicks - 1300
@@ -118,6 +113,15 @@
 }
     </script>
     <p>
+      <script>
+        var clicks = 1
+        
+        function buttonClicked() {
+        document.getElementById("clicks").innerHTML = clicks;
+        clicks = clicks + doubleClick + 1
+        }
+      </script>
+              
   <button onclick="buttonClicked();" style="width:1000px;height:500px;">Press For Good Luck</button>
     </p>
     <div class="clickNumber">

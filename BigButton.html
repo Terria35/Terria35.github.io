@@ -18,8 +18,7 @@
       var b = 100
       var luck4 = 1
       var clicks = 1
-      var highScore = 1
-      localStorage.setItem("highscore", highScore);
+      highScore = localStorage.getItem("highscore");
       
   document.addEventListener('keydown', function(e) { 
   var key = e.keyCode || e.which;

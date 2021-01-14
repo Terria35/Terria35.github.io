@@ -18,6 +18,7 @@
       var b = 100
       var luck4 = 1
       var clicks = 1
+      var highScore = 0
   document.addEventListener('keydown', function(e) { 
   var key = e.keyCode || e.which;
       subtractClick();
@@ -116,6 +117,10 @@
         document.getElementById("clicks").innerHTML = clicks;
         clicks = clicks + doubleClick;
           clicks++;
+           document.getElementById("highScore").innerHTML = localStorage.getItem("highscore");
+           if (highscore <= clicks) {
+             localStorage.setItem("highscore",clicks);
+           }
         }
       function unhide() {
     var hid = document.getElementsByClassName("winText");
@@ -129,6 +134,7 @@
     </p>
     <div class="clickNumber">
     <p>Clicks: <span id="clicks"></span></p>
+      <p>Highscore: <span id="highScore"</span></p>
     </div>
     <h1 style="color:blue">Clicks Shop</h1>
     <div class="buttons">

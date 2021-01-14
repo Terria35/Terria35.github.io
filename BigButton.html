@@ -117,7 +117,117 @@
     }
 }
     </script>
-    <p>     
+    <p>   
+      <script>
+          var aautoClick3 = 1
+      var autoClickValue = 1
+      var quad = 1
+      var triple = 1
+      var luck3 = 1
+      var luck2 = 1
+      var doubleClick = 0
+      var b = 100
+      var luck4 = 1
+      var clicks = 1
+      function clickBoost2() {
+        if (clicks >= 1300) {
+          clicks = clicks - 1300
+          document.getElementById("clicks").innerHTML = clicks;
+          doubleClick = doubleClick + 10
+          setTimeout(() => { doubleClick = doubleClick - 10; }, 45000);
+        }
+      }
+      function clickBoost1() {
+        if (clicks >= 900) {
+          clicks = clicks - 900
+          document.getElementById("clicks").innerHTML = clicks;
+          doubleClick = doubleClick + 5
+          setTimeout(() => { doubleClick = doubleClick - 5; }, 20000);
+        }
+      }
+      function autoClick3() {
+        if (clicks >= 800) {
+          if (aautoClick3 < 2) {
+            clicks = clicks - 800
+            document.getElementById("clicks").innerHTML = clicks;
+            setInterval(clicked,1000);
+            aautoClick3 = 2;
+          }
+        }
+      }
+      function click4() {
+        if (clicks >= 700) {
+          if (quad < 2) {
+            clicks = clicks - 700
+            document.getElementById("clicks").innerHTML = clicks;
+            doubleClick = 3;
+            quad = 2;
+            quadClickButton.style.visibility="hidden"
+          }
+        }
+      }
+     function click3() {
+       if (clicks >= 400) {
+         if (triple < 2) {
+           clicks = clicks - 400
+           document.getElementById("clicks").innerHTML = clicks;
+           doubleClick = 2;
+           triple = 2;
+           tripleClickButton.style.visibility="hidden"
+         }
+       }
+     }
+      function click2() {
+            if (clicks >= 100) {
+              if (luck2 < 2) {
+              clicks = clicks - 100
+              document.getElementById("clicks").innerHTML = clicks;
+              luck2 = 2;
+                doubleClick = 1;
+               doubleClickButton.style.visibility="hidden"
+              }
+            }
+        }
+        function autoClick() {
+          if (clicks >= 300) {
+            if (luck3 < 2) {
+              clicks = clicks - 300;
+              document.getElementById("clicks").innerHTML = clicks;
+              setInterval(clicked,3000);
+              luck3++;
+              autoClickButton1.style.visibility="hidden"
+            }
+          }
+        }
+      function win() {
+        "
+        if (clicks >= 1000000) {
+          unhide()
+        }
+      }
+      function autoClick2() {
+          if (clicks >= 600) {
+            if (luck4 < 2) {
+              clicks = clicks - 600;
+              document.getElementById("clicks").innerHTML = clicks;
+              setInterval(clicked,2000);
+              luck4++;
+              autoClickButton2.style.visibility="hidden"
+            }
+          }
+        }
+         function buttonClicked() {
+        document.getElementById("clicks").innerHTML = clicks;
+        clicks = clicks + doubleClick;
+          clicks++;
+        }
+      function unhide() {
+    var hid = document.getElementsByClassName("winText");
+    if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+        hid[0].style.visibility = "visible";
+    }
+}
+      </script>
   <button onclick="buttonClicked();" style="width:1000px;height:500px;">Press For Good Luck</button>
     </p>
     <div class="clickNumber">

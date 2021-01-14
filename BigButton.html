@@ -117,7 +117,7 @@
         }
          function clicked() {
         document.getElementById("clicks").innerHTML = clicks;
-           highScoreClicks = clicks - 1
+           highScoreClicks++;
         clicks = clicks + doubleClick;
           clicks++;
           highScore = localStorage.getItem("highscore");

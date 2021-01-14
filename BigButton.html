@@ -18,11 +18,10 @@
       var b = 100
       var luck4 = 1
       var clicks = 1
-      document.keypress(function(event){
-    var keycode = (event.keyCode ? event.keyCode : event.which);
-    if(keycode == '13'){
-      subtractClick();   
-    }
+   $(document).keypress(function(e) {
+  if(e.which == 13) {
+    subtractClick;
+  }
 });
       function subtractClick() {
         clicks = clicks - doubleClick

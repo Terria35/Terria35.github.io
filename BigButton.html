@@ -18,13 +18,6 @@
       var b = 100
       var luck4 = 1
       var clicks = 1
-        
-        function buttonClicked() {
-        document.getElementById("clicks").innerHTML = clicks;
-        clicks = clicks + doubleClick;
-          clicks++;
-        }
-      
       function clickBoost2() {
         if (clicks >= 1300) {
           clicks = clicks - 1300
@@ -111,6 +104,11 @@
               autoClickButton2.style.visibility="hidden"
             }
           }
+        }
+         function buttonClicked() {
+        document.getElementById("clicks").innerHTML = clicks;
+        clicks = clicks + doubleClick;
+          clicks++;
         }
       function unhide() {
     var hid = document.getElementsByClassName("winText");

@@ -33,6 +33,7 @@
       function clickBoost2() {
         if (clicks >= 1300) {
           clicks = clicks - 1300
+          highScoreClicks = highScoreClicks - 1300
           document.getElementById("clicks").innerHTML = clicks;
           doubleClick = doubleClick + 10
           setTimeout(() => { doubleClick = doubleClick - 10; }, 45000);
@@ -41,6 +42,7 @@
       function clickBoost1() {
         if (clicks >= 900) {
           clicks = clicks - 900
+          highScoreClicks = highScoreClicks - 900
           document.getElementById("clicks").innerHTML = clicks;
           doubleClick = doubleClick + 5
           setTimeout(() => { doubleClick = doubleClick - 5; }, 20000);
@@ -50,6 +52,7 @@
         if (clicks >= 800) {
           if (aautoClick3 < 2) {
             clicks = clicks - 800
+            highScoreClicks = highScoreClicks - 800
             document.getElementById("clicks").innerHTML = clicks;
             setInterval(clicked,1000);
             aautoClick3 = 2;
@@ -61,6 +64,7 @@
         if (clicks >= 700) {
           if (quad < 2) {
             clicks = clicks - 700
+            highScoreClicks = highScoreClicks - 700
             document.getElementById("clicks").innerHTML = clicks;
             doubleClick = 3;
             quad = 2;
@@ -72,6 +76,7 @@
        if (clicks >= 400) {
          if (triple < 2) {
            clicks = clicks - 400
+           highScoreClicks = highScoreClicks - 400
            document.getElementById("clicks").innerHTML = clicks;
            doubleClick = 2;
            triple = 2;
@@ -83,6 +88,7 @@
             if (clicks >= 100) {
               if (luck2 < 2) {
               clicks = clicks - 100
+                highScoreClicks = highScoreClicks - 100
               document.getElementById("clicks").innerHTML = clicks;
               luck2 = 2;
                 doubleClick = 1;
@@ -94,6 +100,7 @@
           if (clicks >= 300) {
             if (luck3 < 2) {
               clicks = clicks - 300;
+              highScoreClicks = highScoreClicks - 300;
               document.getElementById("clicks").innerHTML = clicks;
               setInterval(clicked,3000);
               luck3++;
@@ -110,6 +117,7 @@
           if (clicks >= 600) {
             if (luck4 < 2) {
               clicks = clicks - 600;
+              highScoreClicks = highScoreClicks - 600;
               document.getElementById("clicks").innerHTML = clicks;
               setInterval(clicked,2000);
               luck4++;
@@ -125,6 +133,7 @@
           highScore = localStorage.getItem("highscore");
            document.getElementById("highScore").innerHTML = highScore;
            if (highScore <= highScoreClicks) {
+             highScore = highScore + douleClick
              highScore++;
              localStorage.setItem("highscore", highScore);
              document.getElementById("highScore").innerHTML = highScore;

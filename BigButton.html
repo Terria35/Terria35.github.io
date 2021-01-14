@@ -18,13 +18,12 @@
       var b = 100
       var luck4 = 1
       var clicks = 1
-      var clickButton = document.getElementById("clickButton");
-      
-      clickButton.addEventListener("keydown", function (e) {
-       if (e.keyCode === 13) { 
-        subtractClick(e);
-         }
-        });
+      $(document).keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+      subtractClick();   
+    }
+});
       function subtractClick() {
         clicks = clicks - doubleClick
         clicks--;

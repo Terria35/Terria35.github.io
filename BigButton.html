@@ -18,9 +18,15 @@
       var b = 100
       var luck4 = 1
       var clicks = 1
-      if (event.keyCode === 13) {
-          document.getElementById("clicks").innerHTML = clicks;
-      clicks = clicks - doubleClicks
+      var clickButton = document.getElementById("clickButton");
+      
+      clickButton.addEventListener("keydown", function (e) {
+       if (e.keyCode === 13) { 
+        subtractClick(e);
+         }
+        });
+      function subtractClick() {
+        clicks = clicks - doubleClick
         clicks--;
       }
       function clickBoost2() {
@@ -122,7 +128,7 @@
 }
     </script>
     <p>   
-  <button onclick="clicked();" style="width:1000px;height:500px;">Press For Good Luck</button>
+  <button id="clickButton" onclick="clicked();" style="width:1000px;height:500px;">Press For Good Luck</button>
     </p>
     <div class="clickNumber">
     <p>Clicks: <span id="clicks"></span></p>

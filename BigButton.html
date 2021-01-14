@@ -4,17 +4,6 @@
   <head>
     <link rel="stylesheet" href="https://terria34.github.io/BigButtonCSS.css">
     <h1>Press The Button (In Progress)</h1>
-    <script type="text/javascript">
-
-function stopRKey(evt) {
-  var evt = (evt) ? evt : ((event) ? event : null);
-  var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
-  if ((evt.keyCode == 13) && (node.type=="text"))  {return false;}
-}
-
-document.onkeypress = stopRKey;
-
-</script>
     </head>
   <body style="background-color:yellow">
     <style>.winText{visibility:hidden;}</style>
@@ -29,6 +18,11 @@ document.onkeypress = stopRKey;
       var b = 100
       var luck4 = 1
       var clicks = 1
+      if (event.keyCode === 13) {
+          document.getElementById("clicks").innerHTML = clicks;
+      clicks = clicks - doubleClicks
+        clicks--;
+      }
       function clickBoost2() {
         if (clicks >= 1300) {
           clicks = clicks - 1300

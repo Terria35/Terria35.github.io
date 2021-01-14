@@ -19,6 +19,8 @@
       var luck4 = 1
       var clicks = 1
       var highScore = 0
+      localStorage.setItem("highscore", highScore);
+      
   document.addEventListener('keydown', function(e) { 
   var key = e.keyCode || e.which;
       subtractClick();
@@ -117,9 +119,10 @@
         document.getElementById("clicks").innerHTML = clicks;
         clicks = clicks + doubleClick;
           clicks++;
-           document.getElementById("highScore").innerHTML = localStorage.getItem("highscore");
-           if (highscore <= clicks) {
-             localStorage.setItem("highscore",clicks);
+          highScore = localStorage.getItem("highscore");
+           if (highscore < clicks) {
+             highScore++;
+             localStorage.setItem("highscore", highScore);
            }
         }
       function unhide() {

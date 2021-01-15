@@ -13,26 +13,21 @@
   <p id="link"></p>
   <p id="Insult1"</p>
   <p id="Insult2></p>
-         
-         
-         
-         
-         
   <p>version 0.1.1</p>
 
 <script>
 const identifier = ["you", "person", "yo", "fat", "stinky"];
   const link = ["as", "is", "are", "was", "like"];
-  const lnsult1 = ["fat", "stinky", "ping pong", "evil", "trash", "bad", "file", "wipe"]
+  const Insult1 = ["fat", "stinky", "ping pong", "evil", "trash", "bad", "file", "wipe"]
   const Insult2 = ["fridge", "table", "Minecraft CD - 13", "Can", "Momma", "Cabinet", "Hamster", "Computer"]
 
 randomizeFunction()
 
 function randomizeFunction() {
     document.getElementById("identifier").innerHTML = identifier[Math.floor(Math.random() * identifier.length)]
-  document.getElementById("link").innerHTML = identifier[Math.floor(Math.random() * link.length)]
-    document.getElementById("Insult1").innerHTML = identifier[Math.floor(Math.random() * Insult1.length)]
-      document.getElementById("Insult2").innerHTML = identifier[Math.floor(Math.random() * Insult2.length)]
+  document.getElementById("link").innerHTML = link[Math.floor(Math.random() * link.length)]
+    document.getElementById("Insult1").innerHTML = Insult1[Math.floor(Math.random() * Insult1.length)]
+      document.getElementById("Insult2").innerHTML = Insult2[Math.floor(Math.random() * Insult2.length)]
 }
 </script>
 </body>

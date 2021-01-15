@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<title>Insult Generator</title>
+<head>
+<h1>Do you need a Creative Insult?>
+</head>
+<body>
+<p>Then you have come to the right place!<p>
+  <button onclick="randomizeFunction()">Randomize!!</button>
+  
+  <p>Random generated word is:</p>
+  <p id="randomWord"></p>
+
+<script>
+const myList = ["List item 1", "List item 2", "List item 3", "List item 4", "List item 5"];
+
+randomizeFunction()
+
+function randomizeFunction() {
+    document.getElementById("randomWord").innerHTML = myList[Math.floor(Math.random() * myList.length)]
+}
+</script>
+</body>
+</html>

@@ -8,15 +8,21 @@
   <button onclick="randomizeFunction()">Press Here For Your Insult</button>
   
   <p>Your Randomly Generated Insult Is:</p>
-  <p id="randomWord"></p>
+  <p id="randomWord"></p><p id="link"></p><p id="link"></p><p id="Insult1"</p><p id="Insult2></p>
 
 <script>
-const myList = ["Your as smart as a ping pong table", "stupid fridge", "goverment is you", "you have a playstation 3", "stinky shoe", "lamp"];
+const identifier = ["you", "person", "yo", "fat", "stinky"];
+  const link = ["as", "is", "are", "was", "like"];
+  const lnsult1 = ["fat", "stinky", "ping pong", "evil", "trash", "bad", "file", "wipe"]
+  const Insult2 = ["fridge", "table", "Minecraft CD - 13", "Can", "Momma", "Cabinet", "Hamster", "Computer"]
 
 randomizeFunction()
 
 function randomizeFunction() {
-    document.getElementById("randomWord").innerHTML = myList[Math.floor(Math.random() * myList.length)]
+    document.getElementById("identifier").innerHTML = identifier[Math.floor(Math.random() * identifier.length)]
+  document.getElementById("link").innerHTML = identifier[Math.floor(Math.random() * link.length)]
+    document.getElementById("Insult1").innerHTML = identifier[Math.floor(Math.random() * Insult1.length)]
+      document.getElementById("Insult2").innerHTML = identifier[Math.floor(Math.random() * Insult2.length)]
 }
 </script>
 </body>

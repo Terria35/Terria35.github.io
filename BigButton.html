@@ -136,6 +136,7 @@
              highScore = highScore + douleClick
              highScore++;
              localStorage.setItem("highscore", highScore);
+             highScore = localStorage.getItem("highscore");
              document.getElementById("highScore").innerHTML = highScore;
            }
         }

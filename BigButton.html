@@ -17,7 +17,7 @@
       var doubleClick = 0
       var b = 100
       var luck4 = 1
-      var clicks = 1
+      var clicks = 0
       var highScore = 0
       var highScoreClicks = -1
       
@@ -127,12 +127,11 @@
         }
          function clicked() {
         document.getElementById("clicks").innerHTML = clicks;
-           highScoreClicks++;
         clicks = clicks + doubleClick;
           clicks++;
           highScore = localStorage.getItem("highscore");
            document.getElementById("highScore").innerHTML = highScore;
-           if (highScore <= highScoreClicks) {
+           if (highScore <= clicks) {
              highScore = highScore + douleClick
              highScore++;
              localStorage.setItem("highscore", highScore);

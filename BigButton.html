@@ -131,8 +131,9 @@
           clicks++;
           highScore = localStorage.getItem("highscore");
            document.getElementById("highScore").innerHTML = highScore;
-           if (highScore < clicks) {
+           if (highScore < clicks - 1) {
              highScore++;
+             highScore = HighScore + doubleClick
              localStorage.setItem("highscore", highScore);
              document.getElementById("highScore").innerHTML = highScore;
            }

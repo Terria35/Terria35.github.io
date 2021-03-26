@@ -131,10 +131,9 @@ function peopleName(base) {
 }
 
 function generateRegion() {
-  quantity = 1;
   var quantityString = document.forms.form.quantity.value;
   var numberRegex = new RegExp('^[0-9]+$');
-  quantity = 1;
+  var quantity = 1;
   if (numberRegex.test(quantityString))
     quantity = parseInt(quantityString);
   var output = '';

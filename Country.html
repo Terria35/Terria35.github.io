@@ -9,7 +9,7 @@
       <input type="text">
     </form>
     <p>Country Domestic Stats</p>
-    <p>Current Population: <span id="population"></span>| Current Money: <span id="cMoney"></span>| Current Loyal Level: <span id="loyal"></span>| Infastructure Level: <span id="builds"></span>| Relations Stat: <span id="relation"></span><span id="initials"></span><span id="nucleii"></span><span id="finals"></span></p>
+    <p>Current Population: <span id="pop"></span>| Current Money: <span id="cMoney"></span>| Current Loyal Level: <span id="cLoyal"></span>| Infastructure Level: <span id="builds"></span>| Relations Stat: <span id="relation"></span><span id="initials"></span><span id="nucleii"></span><span id="finals"></span></p>
    <p style="text-align:left;">
     Allies
     <span style="float:right;">
@@ -25,8 +25,22 @@
     <button id="start"; onclick="start(), this.style.display='none'">Start your Country</button>
     <script>
       var cMoney = 1000
-      var aMoney = 400
+      var aMoney = 50
       var bMoney = 0
+      var pop = 2
+      var = apop = 1
+      var bpop = 0
+      var cLoyal = 5
+      var aLoyal = 0.5
+      var bLoyal = 0
+      function IncreaseLoyal() {
+        cLoyal = cLoyal + aLoyal + bLoyal
+        document.getElementById("cLoyal").innerHTML = cLoyal;
+      }
+      function IncreasePop() {
+        pop = pop + apop + bpop
+        document.getElementById("pop").innerHTML = pop;
+      }
       function IncreaseMoney() {
         cMoney = cMoney + aMoney + bMoney
         document.getElementById("cMoney").innerHTML = cMoney;
@@ -42,7 +56,9 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
      }
        
       function start() {
-        setInterval(IncreaseMoney, 500)
+        setInterval(IncreaseLoyal, 7000)
+        setInterval(IncreasePop, 4000)
+        setInterval(IncreaseMoney, 1500)
     var randomnumber = Math.random()
         if (randomnumber < 0.5) {
           document.getElementById('relation').innerHTML = 'Colony of '; 
@@ -54,5 +70,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.4</p>
+  <p>ver.0.0.3</p>
 </html>

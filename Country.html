@@ -33,13 +33,36 @@
       var cLoyal = 5
       var aLoyal = 0.5
       var bLoyal = 0
+      var housing = 20
+      var iLoyal = 0
+      var food = 10
       function IncreaseLoyal() {
+        if (iLoyal >= 15) {
+          cLoyal = cLoyal - 0.5
+        }
+        if (iLoyal >= 35) {
+          cLoyal = cLoyal - 3
+        }
+        if (iLoyal >= 50) {
+          cLoyal = cLoyal - 5
+        }
+        if (iLoyal >= 75) {
+          cLoyal = cLoyal - 10
+        }
+        if (iLoyal >= 100) {
+          cLoyal = cLoyal - 20
+        }
         cLoyal = cLoyal + aLoyal + bLoyal
+          iLoyal = iLoyal + 1
         document.getElementById("cLoyal").innerHTML = cLoyal;
       }
       function IncreasePop() {
+        if (housing >= pop) {
         pop = pop + apop + bpop
         document.getElementById("pop").innerHTML = pop;
+          if (food < pop) {
+            
+        }
       }
       function IncreaseMoney() {
         cMoney = cMoney + aMoney + bMoney

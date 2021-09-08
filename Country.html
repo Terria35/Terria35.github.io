@@ -20,7 +20,12 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
     document.getElementById("finals").innerHTML = finals[Math.floor(Math.random() * finals.length)]
        
      }
-       
+       function getNumber() {
+    var minNumber = 0; 
+    var maxNumber = 2;  
+    var randomnumber = Math.floor(Math.random() * (maxNumber + 1) + minNumber); 
+    return false;
+}
     </script>
     <p>Current Population: <span id="population"></span>| Current Money: <span id="money"></span>| Current Loyal Level: <span id="loyal"></span>| Infastructure Level: <span id="builds"></span>| Relations Stat: <span id="relation"></span><span id="initials"></span><span id="nucleii"></span><span id="finals"></span></p>
    <p style="text-align:left;">
@@ -38,7 +43,7 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
     <button id="start"; onclick="start();">Start your Country</button>
     <script>
       function start() {
-       var randomnumber = random(1,2)
+     getnumber()
         if (randomnumber < 1) {
           document.getElementById('relation').innerHTML = 'Colony of '; 
           generateRegion();

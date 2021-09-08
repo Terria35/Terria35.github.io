@@ -9,19 +9,6 @@
       <input type="text">
     </form>
     <p>Country Domestic Stats</p>
-    <script>
-     const initials = ['b', 'bl', 'br', 'bh', 'd', 'dr', 'f', 'fr', 'fl', 'ph', 'g', 'gr', 'gl', 'gh', 'h', 'j', 'c', 'k', 'ch', 'cl', 'cr', 'chr', 'l', 'm', 'n', 'kn', 'gn', 'p', 'pr', 'pl', 'r', 'wr', 's', 'ps', 'sc', 'sch', 't', 'pt', 'v', 'w', 'wh', 'y', 'z', 'th', 'ch', 'sh', 'qu'];
-const nucleii = ['a', 'e', 'i', 'o', 'u', 'ae', 'ee', 'ie', 'oe', 'ue', 'oo', 'au', 'oi', 'ai', 'ea', 'y', 'ye', 'ou', 'oy', 'ey', 'uy', 'ay'];
-const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm', 'mb', 'n', 'p', 'r', 's', 'se', 'ce', 't', 'v', 've', 'w', 'we', 'y', 'z', 'th', 'the', 'ch', 'tch', 'sh', 'sch', 'ng'];
-     
-     function generateRegion() {
-    document.getElementById("initials").innerHTML = initals[Math.floor(Math.random() * initals.length)]
-  document.getElementById("nucleii").innerHTML = nucleii[Math.floor(Math.random() * nucleii.length)]
-    document.getElementById("finals").innerHTML = finals[Math.floor(Math.random() * finals.length)]
-       
-     }
-      
-    </script>
     <p>Current Population: <span id="population"></span>| Current Money: <span id="money"></span>| Current Loyal Level: <span id="loyal"></span>| Infastructure Level: <span id="builds"></span>| Relations Stat: <span id="relation"></span><span id="initials"></span><span id="nucleii"></span><span id="finals"></span></p>
    <p style="text-align:left;">
     Allies
@@ -37,14 +24,17 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
 </p>
     <button id="start"; onclick="start();">Start your Country</button>
     <script>
-       function getNumber() {
-    var minNumber = 0; 
-    var maxNumber = 2;  
-    var randomnumber = Math.floor(Math.random() * (maxNumber + 1) + minNumber); 
-    return false;
-}
+      const initials = ['b', 'bl', 'br', 'bh', 'd', 'dr', 'f', 'fr', 'fl', 'ph', 'g', 'gr', 'gl', 'gh', 'h', 'j', 'c', 'k', 'ch', 'cl', 'cr', 'chr', 'l', 'm', 'n', 'kn', 'gn', 'p', 'pr', 'pl', 'r', 'wr', 's', 'ps', 'sc', 'sch', 't', 'pt', 'v', 'w', 'wh', 'y', 'z', 'th', 'ch', 'sh', 'qu'];
+const nucleii = ['a', 'e', 'i', 'o', 'u', 'ae', 'ee', 'ie', 'oe', 'ue', 'oo', 'au', 'oi', 'ai', 'ea', 'y', 'ye', 'ou', 'oy', 'ey', 'uy', 'ay'];
+const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm', 'mb', 'n', 'p', 'r', 's', 'se', 'ce', 't', 'v', 've', 'w', 'we', 'y', 'z', 'th', 'the', 'ch', 'tch', 'sh', 'sch', 'ng'];
+     
+     function generateRegion() {
+    document.getElementById("initials").innerHTML = initals[Math.floor(Math.random() * initals.length)]
+  document.getElementById("nucleii").innerHTML = nucleii[Math.floor(Math.random() * nucleii.length)]
+    document.getElementById("finals").innerHTML = finals[Math.floor(Math.random() * finals.length)]
+       
       function start() {
-     getNumber()
+    var randomnumber = Math.floor(Math.random() * (2 + 1) + 0); 
         if (randomnumber < 1) {
           document.getElementById('relation').innerHTML = 'Colony of '; 
           generateRegion();

@@ -29,18 +29,18 @@ const nucleii = ['a', 'e', 'i', 'o', 'u', 'ae', 'ee', 'ie', 'oe', 'ue', 'oo', 'a
 const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm', 'mb', 'n', 'p', 'r', 's', 'se', 'ce', 't', 'v', 've', 'w', 'we', 'y', 'z', 'th', 'the', 'ch', 'tch', 'sh', 'sch', 'ng'];
      
      function generateRegion() {
-    document.getElementById("initials").innerHTML = initals[Math.floor(Math.random() * initals.length)]
+    document.getElementById("initials").innerHTML = initals[Math.floor(Math.random() * initials.length)]
   document.getElementById("nucleii").innerHTML = nucleii[Math.floor(Math.random() * nucleii.length)]
     document.getElementById("finals").innerHTML = finals[Math.floor(Math.random() * finals.length)]
      }
        
       function start() {
-    var randomnumber = Math.floor(Math.random() * (2 + 1) + 0); 
-        if (randomnumber < 1) {
+    var randomnumber = Math.random()
+        if (randomnumber < 0.5) {
           document.getElementById('relation').innerHTML = 'Colony of '; 
           generateRegion();
         }
-        if (randomnumber > 1) {
+        if (randomnumber > 0.5) {
           document.getElementById('relation').innerHTML = 'Independent';  
         }
       }

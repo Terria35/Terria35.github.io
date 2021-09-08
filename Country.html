@@ -14,14 +14,15 @@
 const nucleii = ['a', 'e', 'i', 'o', 'u', 'ae', 'ee', 'ie', 'oe', 'ue', 'oo', 'au', 'oi', 'ai', 'ea', 'y', 'ye', 'ou', 'oy', 'ey', 'uy', 'ay'];
 const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm', 'mb', 'n', 'p', 'r', 's', 'se', 'ce', 't', 'v', 've', 'w', 'we', 'y', 'z', 'th', 'the', 'ch', 'tch', 'sh', 'sch', 'ng'];
      
-     function randomizeFunction() {
+     function generateRegion() {
     document.getElementById("initials").innerHTML = initals[Math.floor(Math.random() * initals.length)]
   document.getElementById("nucleii").innerHTML = nucleii[Math.floor(Math.random() * nucleii.length)]
     document.getElementById("finals").innerHTML = finals[Math.floor(Math.random() * finals.length)]
        
-       randomizeFunction()
+     }
+       
     </script>
-    <p>Current Population: <span id="population"></span>| Current Money: <span id="money"></span>| Current Loyal Level: <span id="loyal"></span>| Infastructure Level: <span id="builds"></span>| Relations Stat: <span id="relation"></span><span id="output"></span></p>
+    <p>Current Population: <span id="population"></span>| Current Money: <span id="money"></span>| Current Loyal Level: <span id="loyal"></span>| Infastructure Level: <span id="builds"></span>| Relations Stat: <span id="relation"></span><span id="initials"></span><span id="nucleii"></span><span id="finals"></span></p>
    <p style="text-align:left;">
     Allies
     <span style="float:right;">
@@ -37,28 +38,15 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
     <button id="start"; onclick="start();">Start your Country</button>
     <script>
       function start() {
-        var minNumber = 1;
-    var maxNumber = 2; 
-    var randomnumber = Math.floor(Math.random() * (maxNumber + 1) + minNumber);
-        if (randomnumber = 1) {
+       var randomnumber = random(1,2)
+        if (randomnumber < 1) {
           document.getElementById('relation').innerHTML = 'Colony of '; 
           generateRegion();
         }
-        if (randomnumber = 2) {
+        if (randomnumber > 1) {
           document.getElementById('relation').innerHTML = 'Independent';  
         }
       }
-    </script>
-   <script>
-     const initials = ['b', 'bl', 'br', 'bh', 'd', 'dr', 'f', 'fr', 'fl', 'ph', 'g', 'gr', 'gl', 'gh', 'h', 'j', 'c', 'k', 'ch', 'cl', 'cr', 'chr', 'l', 'm', 'n', 'kn', 'gn', 'p', 'pr', 'pl', 'r', 'wr', 's', 'ps', 'sc', 'sch', 't', 'pt', 'v', 'w', 'wh', 'y', 'z', 'th', 'ch', 'sh', 'qu'];
-const nucleii = ['a', 'e', 'i', 'o', 'u', 'ae', 'ee', 'ie', 'oe', 'ue', 'oo', 'au', 'oi', 'ai', 'ea', 'y', 'ye', 'ou', 'oy', 'ey', 'uy', 'ay'];
-const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm', 'mb', 'n', 'p', 'r', 's', 'se', 'ce', 't', 'v', 've', 'w', 'we', 'y', 'z', 'th', 'the', 'ch', 'tch', 'sh', 'sch', 'ng'];
-     
-     function randomizeFunction() {
-    document.getElementById("initials").innerHTML = initals[Math.floor(Math.random() * initals.length)]
-  document.getElementById("nucleii").innerHTML = nucleii[Math.floor(Math.random() * nucleii.length)]
-    document.getElementById("finals").innerHTML = finals[Math.floor(Math.random() * finals.length)]
-       
     </script>
   </body>
   <p>ver.0.0.2</p>

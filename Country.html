@@ -37,12 +37,16 @@
       var iLoyal = 0
       var builds = 50
       var ibulds = 2
-      function decreaseBuils() {
+      var buildLoyal = 0
+      var buildPop = 0
+      var buildMoney = 0
+      function decreaseBuilds() {
         builds = builds - ibuilds
         buildLoyal = builds/10
         buildPop = builds/5
         ibuilds = ibuilds + 0.5
         buildMoney = builds*3
+        document.getElementById("builds").innerHTML = builds;
       }
       function IncreaseLoyal() {
         if (iLoyal >= 15) {
@@ -88,6 +92,7 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
      }
        
       function start() {
+        setInterval(decreaseBuilds, 10000);
         setInterval(IncreaseLoyal, 7000);
         setInterval(IncreasePop, 4000);
         setInterval(IncreaseMoney, 1500);
@@ -102,5 +107,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.3</p>
+  <p>ver.0.0.4</p>
 </html>

@@ -9,7 +9,7 @@
       <input type="text">
     </form>
     <p>Country Domestic Stats</p>
-    <p>Current Population: <span id="population"></span>| Current Money: <span id="money"></span>| Current Loyal Level: <span id="loyal"></span>| Infastructure Level: <span id="builds"></span>| Relations Stat: <span id="relation"></span><span id="initials"></span><span id="nucleii"></span><span id="finals"></span></p>
+    <p>Current Population: <span id="population"></span>| Current Money: <span id="cMoney"></span>| Current Loyal Level: <span id="loyal"></span>| Infastructure Level: <span id="builds"></span>| Relations Stat: <span id="relation"></span><span id="initials"></span><span id="nucleii"></span><span id="finals"></span></p>
    <p style="text-align:left;">
     Allies
     <span style="float:right;">
@@ -24,6 +24,13 @@
 </p>
     <button id="start"; onclick="start(), this.style.display='none'">Start your Country</button>
     <script>
+      var cMoney = 1000
+      var aMoney = 400
+      var bMoney = 0
+      function IncreaseMoney() {
+        cMoney = cMoney + aMoney + bMoney
+        document.getElementById("cMoney").innerHTML = cMoney;
+      }
       const initials = ['b', 'bl', 'br', 'bh', 'd', 'dr', 'f', 'fr', 'fl', 'ph', 'g', 'gr', 'gl', 'gh', 'h', 'j', 'c', 'k', 'ch', 'cl', 'cr', 'chr', 'l', 'm', 'n', 'kn', 'gn', 'p', 'pr', 'pl', 'r', 'wr', 's', 'ps', 'sc', 'sch', 't', 'pt', 'v', 'w', 'wh', 'y', 'z', 'th', 'ch', 'sh', 'qu'];
 const nucleii = ['a', 'e', 'i', 'o', 'u', 'ae', 'ee', 'ie', 'oe', 'ue', 'oo', 'au', 'oi', 'ai', 'ea', 'y', 'ye', 'ou', 'oy', 'ey', 'uy', 'ay'];
 const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm', 'mb', 'n', 'p', 'r', 's', 'se', 'ce', 't', 'v', 've', 'w', 'we', 'y', 'z', 'th', 'the', 'ch', 'tch', 'sh', 'sch', 'ng'];
@@ -35,6 +42,7 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
      }
        
       function start() {
+        setInterval(IncreaseMoney, 500)
     var randomnumber = Math.random()
         if (randomnumber < 0.5) {
           document.getElementById('relation').innerHTML = 'Colony of '; 
@@ -46,5 +54,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.3</p>
+  <p>ver.0.0.4</p>
 </html>

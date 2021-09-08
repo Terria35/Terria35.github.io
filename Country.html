@@ -35,7 +35,15 @@
       var bLoyal = 0
       var housing = 20
       var iLoyal = 0
-      var food = 10
+      var builds = 50
+      var ibulds = 2
+      function decreaseBuils() {
+        builds = builds - ibuilds
+        buildLoyal = builds/10
+        buildPop = builds/5
+        ibuilds = ibuilds + 0.5
+        buildMoney = builds*3
+      }
       function IncreaseLoyal() {
         if (iLoyal >= 15) {
           cLoyal = cLoyal - 0.5
@@ -52,20 +60,21 @@
         if (iLoyal >= 100) {
           cLoyal = cLoyal - 20
         }
-        cLoyal = cLoyal + aLoyal + bLoyal
+        cLoyal = cLoyal + aLoyal + bLoyal + buildLoyal
           iLoyal = iLoyal + 1
         document.getElementById("cLoyal").innerHTML = cLoyal;
       }
       function IncreasePop() {
+        if (pop <= 0) {
+          lose()
+        }
         if (housing >= pop) {
-        pop = pop + apop + bpop
+        pop = pop + apop + bpop + buildPop
         document.getElementById("pop").innerHTML = pop;
-          if (food < pop) {
-            
         }
       }
       function IncreaseMoney() {
-        cMoney = cMoney + aMoney + bMoney
+        cMoney = cMoney + aMoney + bMoney + buildMoney
         document.getElementById("cMoney").innerHTML = cMoney;
       }
       const initials = ['b', 'bl', 'br', 'bh', 'd', 'dr', 'f', 'fr', 'fl', 'ph', 'g', 'gr', 'gl', 'gh', 'h', 'j', 'c', 'k', 'ch', 'cl', 'cr', 'chr', 'l', 'm', 'n', 'kn', 'gn', 'p', 'pr', 'pl', 'r', 'wr', 's', 'ps', 'sc', 'sch', 't', 'pt', 'v', 'w', 'wh', 'y', 'z', 'th', 'ch', 'sh', 'qu'];
@@ -93,5 +102,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.4</p>
+  <p>ver.0.0.3</p>
 </html>

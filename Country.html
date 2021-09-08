@@ -16,12 +16,6 @@
         Enemys
     </span>
 </p>
-   <p style="text-align:left;">
-     <span id="allies"></span>
-    <span style="float:right;">
-      <span id="enemy"></span>
-    </span>
-</p>
     <button id="start"; onclick="start(), this.style.display='none'">Start your Country</button>
     <script>
       var cMoney = 1000
@@ -69,6 +63,9 @@
         document.getElementById("cLoyal").innerHTML = cLoyal;
       }
       function IncreasePop() {
+        if (housing <= pop) {
+          iLoyal = iLoyal + 0.5
+        }
         if (pop <= 0) {
           lose()
         }
@@ -107,5 +104,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.4</p>
+  <p>ver.0.0.3</p>
 </html>

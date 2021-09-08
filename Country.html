@@ -42,10 +42,10 @@
       var buildMoney = 0
       function decreaseBuilds() {
         builds = builds - ibuilds
-        buildLoyal = builds/10
-        buildPop = builds/5
+        buildLoyal = Math.floor(builds/10)
+        buildPop = Math.floor(builds/5)
         ibuilds = ibuilds + 0.5
-        buildMoney = builds*3
+        buildMoney = Math.floor(builds*3)
         document.getElementById("builds").innerHTML = builds;
       }
       function IncreaseLoyal() {
@@ -107,5 +107,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.5</p>
+  <p>ver.0.0.4</p>
 </html>

@@ -39,6 +39,7 @@
       var buildPop = 0
       var buildMoney = 0
       var go = 1
+      var corrupt = 0
        function lose() {
           var hid = document.getElementsByClassName("loseText");
     if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
@@ -76,7 +77,7 @@
         if (iLoyal >= 100) {
           cLoyal = cLoyal - 20
         }
-        cLoyal = cLoyal + aLoyal + bLoyal + buildLoyal
+        cLoyal = cLoyal + aLoyal + bLoyal + buildLoyal - corrupt
           iLoyal = iLoyal + 1
         document.getElementById("cLoyal").innerHTML = cLoyal;
       }

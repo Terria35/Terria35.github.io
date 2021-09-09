@@ -80,6 +80,7 @@
         document.getElementById("cLoyal").innerHTML = cLoyal;
       }
       function IncreasePop() {
+        pop = pop - Math.floor(pop*0.1)
          if (cLoyal < 0) {
           pop = pop - 8
         }
@@ -133,5 +134,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.0.7</p>
+  <p>ver.0.0.0.8</p>
 </html>

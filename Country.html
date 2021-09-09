@@ -19,7 +19,7 @@
     <button id="start"; onclick="start(), this.style.display='none'">Start your Country</button>
     <style>.loseText{visibility:hidden;}</style>
     <div class="loseText">
-    <b style="font-size: 10000%">You Lose :(</b>
+    <b style="font-size: 1000%">You Lose :(</b>
     </div>
     <script>
       var cMoney = 1000
@@ -50,13 +50,14 @@
       }
       function decreaseBuilds() {
         builds = builds - ibuilds
-        buildLoyal = Math.floor(builds/10)
-        buildPop = Math.floor(builds/5)
+        buildLoyal = Math.floor(builds/15)
+        buildPop = Math.floor(builds/10)
         ibuilds = ibuilds + 0.5
         buildMoney = Math.floor(builds*3)
         document.getElementById("builds").innerHTML = builds;
       }
       function IncreaseLoyal() {
+        cLoyal = cLoyal - Math.floor(cLoyal*0.15)
         if (cLoyal <= 0) {
           lose()
         }

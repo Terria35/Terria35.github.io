@@ -2,9 +2,15 @@
 <title>Your Country</title>
 <html lang="en">
   <head>
-    <button class="popup" onclick="myFunction()">Click me!
-  <span class="popuptext" id="myPopup">Popup text...</span>
-</button>
+    a class="trigger_popup_fricc">Click here to show the popup</a>
+
+<div class="hover_bkgr_fricc">
+    <span class="helper"></span>
+    <div>
+        <div class="popupCloseButton">&times;</div>
+        <p>Add any HTML content<br />inside the popup box!</p>
+    </div>
+</div>
   </head>
   <body style="background-color:yellow; text-align:center;">
     <form>
@@ -44,10 +50,18 @@
       var go = 1
       var corrupt = 0
       
-      function myFunction() {
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
-}
+      $(window).load(function () {
+    $(".trigger_popup_fricc").click(function(){
+       $('.hover_bkgr_fricc').show();
+    });
+    $('.hover_bkgr_fricc').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+    $('.popupCloseButton').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+});
+     
        function lose() {
           var hid = document.getElementsByClassName("loseText");
     if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {

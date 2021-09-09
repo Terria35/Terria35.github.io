@@ -8,16 +8,18 @@
       <p>Your Country Name:<p>
       <input type="text">
     </form>
+    <div class="stats">
     <b style="color: green; font-size: 150%">Country Domestic Stats</b>
     <p>Current Population: <span id="pop"></span> </p>
     <p> Current Money: <span id="cMoney"></span> </p>
     <p> Current Loyal Level: <span id="cLoyal"></span> </p>
     <p> Infastructure Level: <span id="builds"></span> </p>
     <p> Relations Stat: <span id="relation"></span><span id="initials"></span><span id="nucleii"></span><span id="finals"></span> </p>
+    </div>
     <button id="start"; onclick="start(), this.style.display='none'">Start your Country</button>
     <style>.loseText{visibility:hidden;}</style>
     <div class="loseText">
-    <b style="font-size: 150%">You Lose :(</b>
+    <b style="font-size: 400%">You Lose :(</b>
     </div>
     <script>
       var cMoney = 1000
@@ -37,12 +39,13 @@
       var buildPop = 0
       var buildMoney = 0
       var go = 1
-     if (go >= 1) {
-      
        function lose() {
           var hid = document.getElementsByClassName("loseText");
     if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
         hid[0].style.visibility = "visible";}
+          var hid1 = document.getElementsByClassName("stats");
+    if(hid1[0].offsetWidth > 0 && hid1[0].offsetHeight > 0) {
+        hid1[0].style.visibility = "hidden";}
          var go = 0
       }
       function decreaseBuilds() {
@@ -128,7 +131,6 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
           document.getElementById('relation').innerHTML = 'Independent';  
         }
       }
-    }
     </script>
   </body>
   <p>ver.0.0.0.6</p>

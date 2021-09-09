@@ -2,10 +2,14 @@
 <title>Your Country</title>
 <html lang="en">
   <head>
+    <style>.loseText{visibility:hidden;}</style>
+    <div class="loseText">
+    <h1>You Lose :(</h1>
+    </div>
   </head>
   <body style="background-color:yellow; text-align:center;">
     <form>
-      <p>Your Country Name:</p>
+      <p>Your Country Name:<p>
       <input type="text">
     </form>
     <b style="color: green; font-size: 150%">Country Domestic Stats</b>
@@ -32,6 +36,12 @@
       var buildLoyal = 0
       var buildPop = 0
       var buildMoney = 0
+      function lose() {
+          var hid = document.getElementsByClassName("loseText");
+    if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+        hid[0].style.visibility = "visible";}
+      window.stop()
+      }
       function decreaseBuilds() {
         builds = builds - ibuilds
         buildLoyal = Math.floor(builds/10)
@@ -41,6 +51,9 @@
         document.getElementById("builds").innerHTML = builds;
       }
       function IncreaseLoyal() {
+        if (cLoyal <= 0) {
+          lose()
+        }
         if (iLoyal >= 15) {
           cLoyal = cLoyal - 0.5
         }
@@ -61,6 +74,18 @@
         document.getElementById("cLoyal").innerHTML = cLoyal;
       }
       function IncreasePop() {
+         if (cLoyal < 0) {
+          pop = pop - 8
+        }
+         if (cLoyal < 10) {
+          pop = pop - 4
+        }
+         if (cLoyal < 20) {
+          pop = pop - 2
+        }
+        if (cLoyal < 30) {
+          pop = pop - 1
+        }
         if (housing <= pop) {
           iLoyal = iLoyal + 0.5
         }
@@ -102,5 +127,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.4</p>
+  <p>ver.0.0.0.5</p>
 </html>

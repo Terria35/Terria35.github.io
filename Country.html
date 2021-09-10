@@ -31,6 +31,7 @@
   <p>------------------------Starting Population Upgrades------------------------</p>
   <div class="buttons">
     <button id="Taxes", onclick="raiseTaxes()";>Increase Taxes -500$ (+50 per tick)</button>
+    <button id="buildN", onclick="buildNe()";>Build More Neighborhoods -6000$ (+15 infustructure)</button>
   </div>
     <style>.loseText{visibility:hidden;}</style>
     <div class="loseText">
@@ -55,7 +56,12 @@
       var buildMoney = 0
       var go = 1
       var corrupt = 0
-      
+      function buildNe() {
+        cMoney = cMoney - 3000
+        builds = builds + 15
+        housing = housing + 50
+        iLoyalty = iLoyalty - 2
+      }
       function raiseTaxes() {
         cMoney = cMoney - 500
         aMoney = aMoney + 50
@@ -104,7 +110,7 @@
           cLoyal = cLoyal - 20
         }
         cLoyal = cLoyal + aLoyal + bLoyal + buildLoyal - corrupt
-          iLoyal = iLoyal + 1
+          iLoyal = iLoyal + 0.5
         document.getElementById("cLoyal").innerHTML = cLoyal;
       }
       function IncreasePop() {

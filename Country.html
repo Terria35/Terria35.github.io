@@ -68,8 +68,8 @@
           var textDisplay = "Successfully aquired more land"
           document.getElementById("textDisplay").innerHTML = textDisplay;
          var hid = document.getElementsByClassName("alert");
-    if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
-        hid[0].style.display = "inline";
+         if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+         hid[0].style.display = "inline";
         }
         if (MoreL > 0.5) {
           var textDisplay = "Expedition Failed - Try again next time"
@@ -77,6 +77,7 @@
           var hid = document.getElementsByClassName("alert");
     if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
         hid[0].style.display = "inline";
+          }
         }
       }
       function decreaseTax() {
@@ -198,5 +199,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.1.5</p>
+  <p>ver.0.0.1.4</p>
 </html>

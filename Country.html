@@ -28,6 +28,9 @@
   <div class="bar2"></div>
   <div class="bar3"></div>
     </div> </p>
+  <p>------------------------Starting Population Upgrades-----------------------------</p>
+  <p class="buttons">
+    <button id="Taxes", onclick="raiseTaxes()";>Increase Taxes</p>
     <style>.loseText{visibility:hidden;}</style>
     <div class="loseText">
     <b style="font-size: 1000%">You Lose :(</b>
@@ -52,6 +55,12 @@
       var go = 1
       var corrupt = 0
       
+      function raiseTaxes() {
+        cMoney = cMoney - 500
+        aMoney = aMoney + 50
+        corrupt = corrupt + 1
+        iLoyal = iLoyal + 0.5
+      }
        function openEco(x) {
     x.classList.toggle("change");
     }   
@@ -117,12 +126,12 @@
           lose()
         }
         if (housing >= pop) {
-        pop = pop + apop + bpop + buildPop
+        pop = Math.floor(pop + apop + bpop + buildPop);
         document.getElementById("pop").innerHTML = pop;
         }
       }
       function IncreaseMoney() {
-        cMoney = cMoney + aMoney + bMoney + buildMoney
+        cMoney = Math.floor(cMoney + aMoney + bMoney + buildMoney);
         document.getElementById("cMoney").innerHTML = cMoney;
       }
       const initials = ['b', 'bl', 'br', 'bh', 'd', 'dr', 'f', 'fr', 'fl', 'ph', 'g', 'gr', 'gl', 'gh', 'h', 'j', 'c', 'k', 'ch', 'cl', 'cr', 'chr', 'l', 'm', 'n', 'kn', 'gn', 'p', 'pr', 'pl', 'r', 'wr', 's', 'ps', 'sc', 'sch', 't', 'pt', 'v', 'w', 'wh', 'y', 'z', 'th', 'ch', 'sh', 'qu'];
@@ -151,5 +160,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.1.2</p>
+  <p>ver.0.0.1.3</p>
 </html>

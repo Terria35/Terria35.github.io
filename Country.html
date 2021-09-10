@@ -19,7 +19,7 @@
     <p>Current Population: <span id="pop"></span> </p>
     <p> Current Money: <span id="cMoney"></span> </p>
     <p> Current Loyal Level: <span id="cLoyal"></span> </p>
-    <p> Infastructure Level: <span id="builds"></span> </p>
+    <p> Infrastructure Level: <span id="builds"></span> </p>
     <p> Relations Stat: <span id="relation"></span><span id="initials"></span><span id="nucleii"></span><span id="finals"></span> </p>
     </div>
     <button id="start"; onclick="start(), this.style.display='none'">Start your Country</button>
@@ -31,7 +31,8 @@
   <p>------------------------Starting Population Upgrades------------------------</p>
   <div class="buttons">
     <button id="Taxes", onclick="raiseTaxes()";>Increase Taxes -500$ (+50 per tick)</button>
-    <button id="buildN", onclick="buildNe()";>Build More Neighborhoods -6000$ (+15 infustructure)</button>
+    <button id="buildN", onclick="buildNe()";>Build More Neighborhoods -6000$ </button>
+    <button onclick="decreaseTax()";>Decrease Tax -1000$ </button>
   </div>
     <style>.loseText{visibility:hidden;}</style>
     <div class="loseText">
@@ -56,6 +57,12 @@
       var buildMoney = 0
       var go = 1
       var corrupt = 0
+      function decreaseTax() {
+        cMoney = cMoney - 1000
+        aMoney = aMoney - 50
+        corrupt = corrupt - 0.5
+        iLoyalty = iLoyalty - 0.3
+      }
       function buildNe() {
         cMoney = cMoney - 3000
         builds = builds + 15
@@ -92,7 +99,7 @@
       function IncreaseLoyal() {
         cLoyal = cLoyal - Math.floor(cLoyal*0.15)
         if (cLoyal <= 0) {
-          lose()
+          pop = pop - 2
         }
         if (iLoyal >= 15) {
           cLoyal = cLoyal - 0.5

@@ -23,7 +23,7 @@
     <p> Relations Stat: <span id="relation"></span><span id="initials"></span><span id="nucleii"></span><span id="finals"></span> </p>
     </div>
     <button id="start"; onclick="start(), this.style.display='none'">Start your Country</button>
-    <p> <div class="eco" onclick="openEco(x)">
+    <p> <div class="eco" onclick="openEco(this)">
   <div class="bar1"></div>
   <div class="bar2"></div>
   <div class="bar3"></div>
@@ -52,7 +52,7 @@
       var go = 1
       var corrupt = 0
       
-       function openEco() {
+       function openEco(x) {
     x.classList.toggle("change");
     }   
        function lose() {

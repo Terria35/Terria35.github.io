@@ -6,7 +6,7 @@
     <style>.alert{display:none;}</style>
     <div class="alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-  This is an alert box.
+      <span id="textDisplay"></span>
 </div>
   </head>
   <body style="background-color:yellow; text-align:center;">
@@ -33,6 +33,7 @@
     <button id="Taxes", onclick="raiseTaxes()";>Increase Taxes -500$ (+50 per tick)</button>
     <button id="buildN", onclick="buildNe()";>Build More Neighborhoods -6000$ </button>
     <button onclick="decreaseTax()";>Decrease Tax -1000$ </button>
+    <button onclick="Moreland()";>Aquire more Land - 10,000$ </button>
   </div>
     <style>.loseText{visibility:hidden;}</style>
     <div class="loseText">
@@ -57,11 +58,33 @@
       var buildMoney = 0
       var go = 1
       var corrupt = 0
+      var MoreL = Math.random(50, 1000);
+      var land = 50
+      var textDisplay = Error
+      
+      function MoreLand() {
+        if (MoreL < 0.5) {
+          land = Math.floor(MoreL*1) + land
+          var textDisplay = "Successfully aquired more land"
+          document.getElementById("textDisplay").innerHTML = textDisplay;
+         var hid = document.getElementsByClassName("alert");
+    if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+        hid[0].style.display = "inline";
+        }
+        if (MoreL > 0.5) {
+          var textDisplay = "Expedition Failed - Try again next time"
+          document.getElementById("textDisplay").innerHTML = textDisplay;
+          var hid = document.getElementsByClassName("alert");
+    if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+        hid[0].style.display = "inline";
+        }
+      }
       function decreaseTax() {
         cMoney = cMoney - 1000
         aMoney = aMoney - 50
         corrupt = corrupt - 0.5
         iLoyalty = iLoyalty - 0.3
+        document.getElementById("cMoney").innerHTML = cMoney;
       }
       function buildNe() {
         cMoney = cMoney - 3000
@@ -92,7 +115,7 @@
         builds = builds - ibuilds
         buildLoyal = Math.floor(builds/15)
         buildPop = Math.floor(builds/10)
-        ibuilds = ibuilds + 0.5
+        ibuilds = ibuilds + Math.floor(0.2*pop/5)
         buildMoney = Math.floor(builds*3)
         document.getElementById("builds").innerHTML = builds;
       }
@@ -117,7 +140,7 @@
           cLoyal = cLoyal - 20
         }
         cLoyal = cLoyal + aLoyal + bLoyal + buildLoyal - corrupt
-          iLoyal = iLoyal + 0.5
+          iLoyal = iLoyal + Math.floor(0.1*pop/5)
         document.getElementById("cLoyal").innerHTML = cLoyal;
       }
       function IncreasePop() {

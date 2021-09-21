@@ -34,6 +34,7 @@
     <button id="buildN", onclick="buildNe()";>Build More Neighborhoods -6000$ </button>
     <button onclick="decreaseTax()";>Decrease Tax -1000$ </button>
     <button onclick="MoreLand()";>Aquire more Land - 10,000$ </button>
+    <button onclick="increaseBuild1()";>Referbish Roads - 2000$</button>
   </div>
     <style>.loseText{visibility:hidden;}</style>
     <div class="loseText">
@@ -63,6 +64,16 @@
       var land = 50
       var textDisplay = "Error"
       
+      function moreBuild1() {
+        if (cMoeny >= 2000) {
+        builds = builds + 20
+        cMoney = cMoney - 2000
+        buildLoyal = Math.floor(builds/15)
+        buildPop = Math.floor(builds/10)
+        buildMoney = Math.floor(builds*3)
+        document.getElementById("builds").innerHTML = builds;
+        }
+      }
       function MoreLand() {
         if (MoreLB < 0.5) {
           land = Math.floor(MoreL*1) + land
@@ -166,9 +177,12 @@
         if (pop <= 0) {
           lose()
         }
-        if (housing >= pop) {
+        if (housing > pop) {
         pop = Math.floor(pop + apop + bpop + buildPop);
         document.getElementById("pop").innerHTML = pop;
+          if (pop > housing) {
+            pop = housing
+          }
         }
       }
       function IncreaseMoney() {

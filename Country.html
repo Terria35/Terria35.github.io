@@ -4,8 +4,8 @@
   <head>
     <link rel="stylesheet" type="text/css" href="https://terria35.github.io/Country.css"/>
     <style>.alert{display:none;}</style>
-    <div id="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <div id="alert" style="background-color:red; text-align:center">;
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
       <span id="textDisplay"></span>
 </div>
   </head>
@@ -21,6 +21,7 @@
     <p> Current Loyal Level: <span id="cLoyal"></span> </p>
     <p> Infrastructure Level: <span id="builds"></span> </p>
     <p> Relations Stat: <span id="relation"></span><span id="initials"></span><span id="nucleii"></span><span id="finals"></span> </p>
+    <p> Land Mass: <span id="land"></span> </p>
     </div>
     <button id="start"; onclick="start(), this.style.display='none'">Start your Country</button>
     <p> <div class="eco" onclick="openEco(this)">
@@ -73,6 +74,7 @@
         }
       }
       function MoreLand() {
+        if (cMoney >= 10000) {
         var MoreL = Math.random(50, 1000);
         var MoreLB = Math.random(0,1);
         if (MoreLB < 0.5) {
@@ -80,14 +82,17 @@
           var textDisplay = "Successfully aquired more land"
           document.getElementById("textDisplay").innerHTML = textDisplay;
          document.getElementById("alert").style.display = "inline";
+          document.getElementById("land").innerHTML = land;
         }
         if (MoreLB > 0.5) {
           var textDisplay = "Expedition Failed - Try again next time";
           document.getElementById("textDisplay").innerHTML = textDisplay;
           document.getElementById("textDisplay").innerHTML = textDisplay;
           document.getElementById("alert").style.display = "inline";
+          document.getElementById("land").innerHTML = land;
             }
           }
+      }
       function decreaseTax() {
         cMoney = cMoney - 1000
         aMoney = aMoney - 50
@@ -205,6 +210,7 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
         setInterval(IncreaseLoyal, 7000);
         setInterval(IncreasePop, 4000);
         setInterval(IncreaseMoney, 1500);
+        document.getElementById("land").innerHTML = land;
     var randomnumber = Math.random();
         if (randomnumber < 0.5) {
           document.getElementById('relation').innerHTML = 'Colony of '; 
@@ -216,5 +222,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.1.7</p>
+  <p>ver.0.0.1.8</p>
 </html>

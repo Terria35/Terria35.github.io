@@ -74,11 +74,13 @@
       }
       function MoreLand() {
         if (cMoney >= 10000) {
-        var MoreL = Math.floor(Math.random(50, 100));
+        var minNumber = 50; 
+        var maxNumber = 100; 
+        var MoreL = Math.floor(Math.random() * (maxNumber + 1) + minNumber);
         var MoreLB = Math.random(0,1);
         cMoney = cMoney - 10000;
         if (MoreLB < 0.5) {
-          land = MoreL + land
+          land = land + MoreL
           var textDisplay = "Successfully aquired more land"
           document.getElementById("textDisplay").innerHTML = textDisplay;
          document.getElementById("alert").style.display = "block";
@@ -222,5 +224,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.1.7</p>
+  <p>ver.0.0.1.8</p>
 </html>

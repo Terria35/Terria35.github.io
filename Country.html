@@ -90,7 +90,7 @@
           var textDisplay = "Expedition Failed - Try again next time";
           document.getElementById("textDisplay").innerHTML = textDisplay;
           document.getElementById("textDisplay").innerHTML = textDisplay;
-          document.getElementById("alert").style.display = "inline";
+          document.getElementById("alert").style.display = "block";
           document.getElementById("land").innerHTML = land;
             }
           }
@@ -103,6 +103,7 @@
         document.getElementById("cMoney").innerHTML = cMoney;
       }
       function buildNe() {
+        if (cMoney >= 6000) {
         if (housing < land) {
         cMoney = cMoney - 6000
         builds = builds + 15
@@ -112,7 +113,7 @@
         if (housing > land) {
           housing = land
         }
-        
+        }
       }
       function raiseTaxes() {
         cMoney = cMoney - 500

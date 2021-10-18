@@ -67,7 +67,8 @@
       var textDisplay = "Error"
       var crimerate = 10
       var policelvl = 10
-      var anticorruptlevel
+      var anticorruptlevel = 1
+      var bbuilds = 0
       document.getElementById("textDisplay").innerHTML = textDisplay;
       
       function purgeC() {
@@ -161,6 +162,7 @@
       }
       function decreaseBuilds() {
         builds = builds - ibuilds
+        builds = builds + bbuilds
         buildLoyal = Math.floor(builds/15)
         buildPop = Math.floor(builds/10)
         ibuilds = ibuilds + Math.floor(0.2*pop/5)
@@ -188,7 +190,7 @@
           cLoyal = cLoyal - 20
         }
         cLoyal = cLoyal + aLoyal + bLoyal + buildLoyal - corrupt
-          iLoyal = iLoyal + Math.floor(0.1*pop/5)
+          iLoyal = iLoyal + 1
         document.getElementById("cLoyal").innerHTML = cLoyal;
       }
       function IncreasePop() {

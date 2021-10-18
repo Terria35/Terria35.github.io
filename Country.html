@@ -69,8 +69,16 @@
       var policelvl = 10
       var anticorruptlevel = 1
       var bbuilds = 0
+      var colony = false
       document.getElementById("textDisplay").innerHTML = textDisplay;
       
+      function tier2pop() {
+        var textDisplay = "You upgraded your town!";
+        document.getElementById("textDisplay").innerHTML = textDisplay;
+        document.getElementById("alert").style.backgroundColor = "Green";
+        document.getElementById("alert").style.display = "block";
+        document.getElementById("tier2").style.display = "inline";
+      }
       function purgeC() {
         if (cMoney >= 3000) {
           var purgeN = crimerate*-1 + ((anticorruptlevel + 1)*10)
@@ -106,12 +114,14 @@
         if (MoreLB > 0.5) {
           land = land + MoreL
           var textDisplay = "Successfully aquired more land"
+          document.getElementById("alert").style.backgroundColor = "red";
           document.getElementById("textDisplay").innerHTML = textDisplay;
          document.getElementById("alert").style.display = "block";
           document.getElementById("land").innerHTML = land;
         }
         if (MoreLB < 0.5) {
           var textDisplay = "Expedition Failed - Try again next time";
+          document.getElementById("alert").style.backgroundColor = "red";
           document.getElementById("textDisplay").innerHTML = textDisplay;
           document.getElementById("textDisplay").innerHTML = textDisplay;
           document.getElementById("alert").style.display = "block";
@@ -225,6 +235,10 @@
         var corruptM = Math.floor(corrupt*25)
         cMoney = cMoney + aMoney + bMoney + buildMoney - corrupt;
         document.getElementById("cMoney").innerHTML = cMoney;
+        //inserting population detectors here for simplicity
+        if (pop >= 100) {
+          tier2pop();
+        }
       }
       const initials = ['b', 'bl', 'br', 'bh', 'd', 'dr', 'f', 'fr', 'fl', 'ph', 'g', 'gr', 'gl', 'gh', 'h', 'j', 'c', 'k', 'ch', 'cl', 'cr', 'chr', 'l', 'm', 'n', 'kn', 'gn', 'p', 'pr', 'pl', 'r', 'wr', 's', 'ps', 'sc', 'sch', 't', 'pt', 'v', 'w', 'wh', 'y', 'z', 'th', 'ch', 'sh', 'qu'];
 const nucleii = ['a', 'e', 'i', 'o', 'u', 'ae', 'ee', 'ie', 'oe', 'ue', 'oo', 'au', 'oi', 'ai', 'ea', 'y', 'ye', 'ou', 'oy', 'ey', 'uy', 'ay'];
@@ -246,6 +260,7 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
         if (randomnumber < 0.5) {
           document.getElementById('relation').innerHTML = 'Colony of '; 
           generateRegion();
+          colony = true
         }
         if (randomnumber > 0.5) {
           document.getElementById('relation').innerHTML = 'Independent';  
@@ -253,5 +268,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.1.8</p>
+  <p>ver.0.0.1.9</p>
 </html>

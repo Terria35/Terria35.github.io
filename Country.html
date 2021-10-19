@@ -74,7 +74,12 @@
       var bbuilds = 0
       var colony = false
       var tier = 0
+      var pMoney = 0
       document.getElementById("textDisplay").innerHTML = textDisplay;
+      
+      function decreaseCorrupt() {
+        corrupt = corrupt - anticorruptlvl*10
+      }
       
       function buildpark() {
         
@@ -135,6 +140,7 @@
         buildPop = Math.floor(builds/10)
         buildMoney = Math.floor(builds*3)
         document.getElementById("builds").innerHTML = builds;
+        corrupt = corrupt + 3
         }
       }
       function MoreLand() {
@@ -165,7 +171,7 @@
       function decreaseTax() {
         cMoney = cMoney - 1000
         aMoney = aMoney - 50
-        corrupt = corrupt - 0.5
+        corrupt = corrupt + 1
         iLoyal = iLoyal - 0.3
         document.getElementById("cMoney").innerHTML = cMoney;
       }
@@ -176,6 +182,7 @@
         builds = builds + 15
         housing = housing + 50
         iLoyal = iLoyal - 2
+        corrupt = corrupt + 2
         }
         if (housing > land) {
           housing = land
@@ -186,7 +193,7 @@
         if (cMoney >= 500) {
         cMoney = cMoney - 500
         aMoney = aMoney + 50
-        corrupt = corrupt + 1
+        corrupt = corrupt + 3
         iLoyal = iLoyal + 0.5
         document.getElementById("cMoney").innerHTML = cMoney;
         }
@@ -265,7 +272,8 @@
         }
       }
       function IncreaseMoney() {
-        cMoney = cMoney + aMoney + bMoney + buildMoney - corrupt;
+        cMoney = cMoney + aMoney + bMoney + buildMoney + pMoney - corrupt*5;
+        pMoney = Math.floor(pop*3)
         document.getElementById("cMoney").innerHTML = cMoney;
         //inserting population detectors here for simplicity
         if (pop >= 100) {
@@ -286,6 +294,8 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
      }
        
       function start() {
+        setInterval(crimeincrease, 7000);
+        setInterval(decreaseCorrupt, 10000);
         setInterval(decreaseBuilds, 10000);
         setInterval(IncreaseLoyal, 7000);
         setInterval(IncreasePop, 4000);
@@ -303,5 +313,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.2.0</p>
+  <p>ver.0.0.2.1</p>
 </html>

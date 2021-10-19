@@ -38,7 +38,10 @@
   </div>
   <div id="tier2">
     <p>------------------------100+ Population Upgrades------------------------</p>
-      <button onclick="purgeC()";>Purge Corruption - 3000$</button>
+      <button onclick="purgeC()";>Purge Corruption - 6000$</button>
+    <button onclick="morepolice()";>Hire Police - 8000$</button>
+    <button onclick="buildpark()";>Build Parks - 7000$</button>
+    <button onclick="buildhomeless1()">Build Homeless Shelters - 2000$</button>
     </div>
     <style>.loseText{visibility:hidden;}</style>
     <div class="loseText">
@@ -65,13 +68,17 @@
       var corrupt = 0
       var land = 50
       var textDisplay = "Error"
-      var crimerate = 10
+      var crimerate = 0
       var policelvl = 10
-      var anticorruptlevel = 1
+      var anticorruptlevel = 0
       var bbuilds = 0
       var colony = false
+      var tier = 0
       document.getElementById("textDisplay").innerHTML = textDisplay;
       
+      function buildpark() {
+        
+      }
       function tier2pop() {
         var textDisplay = "You upgraded your town!";
         document.getElementById("textDisplay").innerHTML = textDisplay;
@@ -81,16 +88,42 @@
       }
       function purgeC() {
         if (cMoney >= 3000) {
-          var purgeN = crimerate*-1 + ((anticorruptlevel + 1)*10)
+          var purgeN = crimerate*-1 + (anticorruptlevel*10)
           var purgeNF = purgeN + policelvl
           if (purgeNF >= 0) {
-            if (corruptM > 0) {
+            if (corrupt > 0) {
             corrupt = corrupt - purgeNF
-              if (corruptM < 0) {
-                corruptM = 0
+              if (corrupt < 0) {
+                corrupt = 0
+              }
+            }
+            else {
+              if (corrupt > 0) {
+              corrupt + purgeNF
+              }
+                if (corrupt < 0) {
+                corrupt = 0
               }
             }
           }
+        }
+      }
+      function crimeincrease() {
+        crimerate = crimerate + Math.floor((pop/10)+(iloyal/10))
+        if (crimerate > 0) {
+          crimerate = crimerate - policelvl*3
+        }
+        if (crimerate < 0) {
+          crimerate = 0
+        }
+        cloyal = cloyal - Math.floor(crimerate/10);
+        cMoney = cMoney - Math.floor(crimerate*10);
+        builds = builds - Math.floor(crimerate/5);
+      }
+      
+      function morepolice() {
+        if (cMoney = 8000) {
+          policelvl = policelvl + 5
         }
       }
       
@@ -232,12 +265,14 @@
         }
       }
       function IncreaseMoney() {
-        var corruptM = Math.floor(corrupt*25)
         cMoney = cMoney + aMoney + bMoney + buildMoney - corrupt;
         document.getElementById("cMoney").innerHTML = cMoney;
         //inserting population detectors here for simplicity
         if (pop >= 100) {
+          if (tier = 0) {
           tier2pop();
+          tier = 1
+          }
         }
       }
       const initials = ['b', 'bl', 'br', 'bh', 'd', 'dr', 'f', 'fr', 'fl', 'ph', 'g', 'gr', 'gl', 'gh', 'h', 'j', 'c', 'k', 'ch', 'cl', 'cr', 'chr', 'l', 'm', 'n', 'kn', 'gn', 'p', 'pr', 'pl', 'r', 'wr', 's', 'ps', 'sc', 'sch', 't', 'pt', 'v', 'w', 'wh', 'y', 'z', 'th', 'ch', 'sh', 'qu'];

@@ -264,6 +264,7 @@
           lose()
         }
         if (housing > pop) {
+        iLoyal = iLoyal - 0.1
         pop = Math.floor(pop + apop + bpop + buildPop);
         document.getElementById("pop").innerHTML = pop;
           if (pop > housing) {
@@ -313,5 +314,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.2.2</p>
+  <p>ver.0.0.2.1</p>
 </html>

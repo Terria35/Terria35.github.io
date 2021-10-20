@@ -148,6 +148,7 @@
         document.getElementById("builds").innerHTML = builds;
         corrupt = corrupt + 3
         iLoyal = iLoyal - 5
+          cLoyal = cLoyal + 10
         }
       }
       function MoreLand() {
@@ -189,6 +190,7 @@
         builds = builds + 15
         housing = housing + 50
         iLoyal = iLoyal - 5
+        cLoyal = cLoyal + 20
         corrupt = corrupt + 2
         }
         if (housing > land) {
@@ -248,7 +250,6 @@
         }
         cLoyal = cLoyal + aLoyal + bLoyal + buildLoyal - corrupt
           iLoyal = iLoyal + 0.5
-          aLoyal = aLoyal + (pop*0.10)
         document.getElementById("cLoyal").innerHTML = cLoyal;
       }
       function IncreasePop() {
@@ -322,5 +323,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.2.2</p>
+  <p>ver.0.0.2.3</p>
 </html>

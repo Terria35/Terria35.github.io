@@ -75,10 +75,14 @@
       var colony = false
       var tier = 0
       var pMoney = 0
+      var pMoney2 = 0
       document.getElementById("textDisplay").innerHTML = textDisplay;
       
+      function startCorruptPrevent() {
+        setInterval(decreaseCorrupt, 8000)
+      }
       function decreaseCorrupt() {
-        corrupt = corrupt - anticorruptlevel*10
+        corrupt = corrupt - anticorruptlevel*5
       }
       
       function buildpark() {
@@ -121,7 +125,7 @@
         if (crimerate < 0) {
           crimerate = 0
         }
-        cloyal = cloyal - Math.floor(crimerate/10);
+        cLoyal = cLoyal - Math.floor(crimerate/10);
         cMoney = cMoney - Math.floor(crimerate*10);
         builds = builds - Math.floor(crimerate/5);
       }

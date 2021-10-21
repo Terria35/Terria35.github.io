@@ -49,7 +49,7 @@
     </div>
     <script>
       var cMoney = 1000
-      var aMoney = 50
+      var aMoney = 100
       var bMoney = 0
       var pop = 2
       var apop = 1
@@ -127,9 +127,11 @@
         if (crimerate < 0) {
           crimerate = 0
         }
+        if (crimerate > 0) {
         cLoyal = cLoyal - Math.floor(crimerate/10);
         cMoney = cMoney - Math.floor(crimerate*10);
         builds = builds - Math.floor(crimerate/5);
+        }
       }
       
       function morepolice() {
@@ -229,7 +231,6 @@
         document.getElementById("builds").innerHTML = builds;
       }
       function IncreaseLoyal() {
-        cLoyal = cLoyal - Math.floor(cLoyal*0.15)
         if (cLoyal <= 0) {
           pop = pop - 2
         }
@@ -267,7 +268,7 @@
           pop = pop - 1
         }
         if (housing <= pop) {
-          iLoyal = iLoyal + 0.1
+          iLoyal = iLoyal + 0.5
         }
         if (pop <= 0) {
           lose()
@@ -323,5 +324,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.2.3</p>
+  <p>ver.0.0.2.4</p>
 </html>

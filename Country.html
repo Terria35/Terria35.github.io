@@ -29,6 +29,7 @@
   <div class="bar3"></div>
     </div> </p>
   <div id="advanced"> 
+    <p>-----------------------------Advanced Stats-----------------------------</p>
     <p>Crimerate: <span id="crimerate"></span></p>
     <p>Police Level: <span id="policelvl"></span></p>
     <p>Corruption Level: <span id="corrupt"></span></p>
@@ -36,7 +37,7 @@
     <p>Housing: <span id="housing"></span></p>
     <p>Population Increase Rate: <span id="apop"></span></p>
   </div>
-  <p>------------------------Starting Population Upgrades------------------------</p>
+  <p>------------------------Starting Population Upgrades----------------------</p>
   <div class="buttons">
     <button id="Taxes", onclick="raiseTaxes()";>Increase Taxes -500$</button>
     <button id="buildN", onclick="buildNe()";>Build More Neighborhoods -6000$ </button>
@@ -225,8 +226,15 @@
       }
        function openEco(x) {
     x.classList.toggle("change");
-    document.getElementById("advanced").style.display = "inline";
+    if (document.getElementById("advanced")) {
+    document.getElementById("advanced").id = "advanced2";
+    document.getElementById("advanced2").style.display = "inline";
+    }
+         if (document.getElementById("advanced2").id) {
+    document.getElementById("advanced").id = "advanced";
+    document.getElementById("advanced").style.display = "none";
     }   
+       }
        function lose() {
           var hid = document.getElementsByClassName("loseText");
     if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
@@ -263,6 +271,9 @@
         }
         if (iLoyal >= 100) {
           cLoyal = cLoyal - 20
+        }
+        if (iLoyal < 0) {
+          iLoyal = 0
         }
         cLoyal = cLoyal + aLoyal + bLoyal + buildLoyal - corrupt
           iLoyal = iLoyal + 0.5

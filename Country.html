@@ -28,6 +28,14 @@
   <div class="bar2"></div>
   <div class="bar3"></div>
     </div> </p>
+  <div id="advanced"> 
+    <p>Crimerate: <span id="crimerate"></span></p>
+    <p>Police Level: <span id="policelvl"></span></p>
+    <p>Corruption Level: <span id="corrupt"></span></p>
+    <p>Anti-Loyalty Rate: <span id="iLoyal"></span></p>
+    <p>Housing: <span id="housing"></span></p>
+    <p>Population Increase Rate: <span id="apop"></span></p>
+  </div>
   <p>------------------------Starting Population Upgrades------------------------</p>
   <div class="buttons">
     <button id="Taxes", onclick="raiseTaxes()";>Increase Taxes -500$</button>
@@ -69,7 +77,7 @@
       var land = 50
       var textDisplay = "Error"
       var crimerate = 1
-      var policelvl = 30
+      var policelvl = 60
       var anticorruptlevel = 0
       var bbuilds = 0
       var colony = false
@@ -84,6 +92,7 @@
       function decreaseCorrupt() {
         if (corrupt > 0) {
         corrupt = corrupt - anticorruptlevel*5
+          document.getElementById("corrupt").innerHTML = corrupt;
         }
       }
       
@@ -118,11 +127,13 @@
             }
           }
         }
+        document.getElementById("corrupt").innerHTML = corrupt;
       }
       function crimeincrease() {
         crimerate = crimerate + Math.floor((pop/10)+(iLoyal/10))
         if (crimerate > 0) {
           crimerate = crimerate - policelvl*3
+          document.getElementById("crimerate").innerHTML = crimerate;
         }
         if (crimerate < 0) {
           crimerate = 0
@@ -136,7 +147,8 @@
       
       function morepolice() {
         if (cMoney = 8000) {
-          policelvl = policelvl + 15
+          policelvl = policelvl + 35
+          document.getElementById("policelvl").innerHTML = policelvl;
         }
       }
       
@@ -194,9 +206,11 @@
         iLoyal = iLoyal - 5
         cLoyal = cLoyal + 20
         corrupt = corrupt + 2
+          document.getElementById("housing").innerHTML = housing;
         }
         if (housing > land) {
           housing = land
+          document.getElementById("housing").innerHTML = housing;
           }
         }
       }
@@ -211,6 +225,12 @@
       }
        function openEco(x) {
     x.classList.toggle("change");
+         if (document.getElementById("tier2").style.display = "none") {
+           document.getElementById("tier2").style.display = "inline";
+         }
+         if (document.getElementById("tier2").style.display = "inline") {
+           document.getElementById("tier2").style.display = "none";
+         }
     }   
        function lose() {
           var hid = document.getElementsByClassName("loseText");
@@ -251,6 +271,7 @@
         }
         cLoyal = cLoyal + aLoyal + bLoyal + buildLoyal - corrupt
           iLoyal = iLoyal + 0.5
+        document.getElementById("iLoyal").innerHTML = iLoyal;
         document.getElementById("cLoyal").innerHTML = cLoyal;
       }
       function IncreasePop() {
@@ -275,10 +296,15 @@
         }
         if (housing > pop) {
         iLoyal = iLoyal - 0.1
+        apop = apop + 1
         pop = Math.floor(pop + apop + bpop + buildPop);
         document.getElementById("pop").innerHTML = pop;
+        document.getElementById("apop").innerHTML = apop;
           if (pop > housing) {
+            apop - 1
             pop = housing
+            document.getElementById("pop").innerHTML = pop;
+        document.getElementById("apop").innerHTML = apop;
           }
         }
       }
@@ -324,5 +350,5 @@ const finals = ['b', 'd', 'f', 'g', 'ge', 'dge', 'ck', 'x', 'ks', 'cks', 'l', 'm
       }
     </script>
   </body>
-  <p>ver.0.0.2.3</p>
+  <p>ver.0.0.2.4</p>
 </html>
